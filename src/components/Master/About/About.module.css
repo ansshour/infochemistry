@@ -1,0 +1,42 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 15px;
+    position: relative;
+    z-index: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: none;
+    }
+}
+
+
+
+/* container */
+
+
+.container {
+    margin-top: 50px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}

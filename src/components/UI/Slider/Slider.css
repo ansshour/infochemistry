@@ -1,0 +1,19 @@
+.swiper-button-next,
+.swiper-button-prev {
+    color: black;
+}
+
+.swiper-button-next {
+    transform: translateX(20px)
+}
+
+.swiper-pagination-bullet-active {
+    background-color: black;
+    width: 11px;
+    height: 11px;
+}
+
+.swiper-pagination-bullet {
+    width: 11px;
+    height: 11px;
+}
