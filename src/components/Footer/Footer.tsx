@@ -22,7 +22,7 @@ export const Footer = () => {
                         <img src="./images/logo2.png" alt="logo" className={styles.logo} />
                         <div className={styles.search}>
                             <Input placeholder="e-mail" />
-                            <Button height="27" width="162">Подписаться</Button>
+                            <Button height="27" width="122">Подписаться</Button>
                         </div>
                     </div>
                     <div className={styles.middle}>

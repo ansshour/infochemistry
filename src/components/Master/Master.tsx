@@ -1,5 +1,7 @@
 import { ProgramCard } from "../UI/ProgramCard/ProgramCard"
 import { About } from "./About/About"
+import { Disciplines } from "./Disciplines/Disciplines"
+import { Features } from "./Features/Features"
 import styles from "./Master.module.css"
 
 export const Master = () => {
@@ -15,6 +17,8 @@ export const Master = () => {
                 <ProgramCard years="2 года" lang="ENG" seats={[26, 10]} studyProgramLink="#" format="Очное обучение" />
             </div>
             <About />
+            <Features />
+            <Disciplines />
         </>
     )
 }

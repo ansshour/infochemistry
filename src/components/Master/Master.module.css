@@ -65,7 +65,8 @@
 
 @media (max-width: 1200px) {
     .container.top {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
     }
 }

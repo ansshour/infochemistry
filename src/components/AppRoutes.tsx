@@ -6,7 +6,7 @@ export const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/master" element={<Master />} />
+            <Route path="master" element={<Master />} />
         </Routes>
     )
 }
