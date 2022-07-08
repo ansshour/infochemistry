@@ -1,8 +1,11 @@
+import { FooterAbitPage } from "../UI/FooterAbitPage/FooterAbitPage"
 import { ProgramCard } from "../UI/ProgramCard/ProgramCard"
 import { About } from "./About/About"
 import { Disciplines } from "./Disciplines/Disciplines"
+import { Examples } from "./Examples/Examples"
 import { Features } from "./Features/Features"
 import styles from "./Master.module.css"
+import { Specializations } from "./Specializations/Specializations"
 
 export const Master = () => {
     return (
@@ -19,6 +22,9 @@ export const Master = () => {
             <About />
             <Features />
             <Disciplines />
+            <Specializations />
+            <Examples />
+            <FooterAbitPage />
         </>
     )
 }

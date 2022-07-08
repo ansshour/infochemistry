@@ -54,16 +54,18 @@
 .table {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
     grid-template-areas:
         "first second third"
         "fouth second fivth";
     box-shadow: 0px 0px 38px 15px rgba(34, 60, 80, 0.05);
+    position: relative;
+    z-index: 2;
 }
 
 .area {
     border: 1px solid black;
-    min-height: 100px;
+    padding: 25px;
 }
 
 .first {
@@ -88,4 +90,48 @@
 
 .fivth {
     grid-area: fivth;
+}
+
+.tableTitle {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+
+.listItem {
+    font-size: 14px;
+    font-weight: 300;
+    color: #9C9C9C;
+}
+
+
+.tableList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+@media (max-width: 1100px) {
+    .table {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+    }
+
+    .area {
+        border: none;
+        border-bottom: 1px solid black;
+        ;
+    }
+
+    .area:last-child {
+        border-bottom: none;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
 }
