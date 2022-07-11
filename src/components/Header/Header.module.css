@@ -1,9 +1,15 @@
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0px 15px;
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1200px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -204,4 +210,42 @@
 
 .nav li:hover>ul {
     display: flex !important;
+}
+
+
+.subMenu__mobile {
+    /* display: none !important; */
+    background-color: white;
+    position: absolute;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+}
+
+.menuSubItems__mobile a {
+    border: none !important;
+}
+
+.subMenu__mobile {
+    display: none !important;
+}
+
+.subMenu__mobile a {
+    font-size: 16px !important;
+}
+
+.menuSubItems__mobile {
+    padding: 5px 10px;
+}
+
+.menuSubItems__mobile:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.navItem__mobile:hover>ul {
+    display: flex !important;
+}
+
+.subMenu__mobile {
+    gap: 0px !important;
+    padding: 5px 0px;
 }

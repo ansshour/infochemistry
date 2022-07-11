@@ -17,7 +17,7 @@ export const Header = () => {
                     {/* desktop menu */}
                     <nav className={styles.nav}>
                         <ul>
-                            {headerItems.map(({ name, link, subElems, id }) => {
+                            {headerItems.map(({ name, link, subElems }) => {
                                 return (
                                     <div className={styles.menuElement}>
                                         <li key={name} className={styles.navItem}>
@@ -55,8 +55,17 @@ export const Header = () => {
             <div className={menuOpen ? [styles.burgerMenu, styles.open].join(" ") : styles.burgerMenu}>
                 <nav className={styles.navMobile}>
                     <ul>
-                        {headerItems.map(({ name, link }) => (
-                            <li key={name}><Link to={link}>{name}</Link></li>
+                        {headerItems.map(({ name, link, subElems }) => (
+                            <div className={styles.menuElement__mobile}>
+                                <li key={name} className={styles.navItem__mobile}>
+                                    <Link to={link}>{name}</Link>
+                                    {subElems && (
+                                        <ul className={styles.subMenu__mobile}>
+                                            {subElems?.map(({ name, link }) => <li className={styles.menuSubItems__mobile} key={name}><Link to={link}>{name}</Link></li>)}
+                                        </ul>
+                                    )}
+                                </li>
+                            </div>
                         ))}
                     </ul>
                     <div className={[styles.buttons, styles.buttonsMobile].join(" ")}>

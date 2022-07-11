@@ -18,7 +18,7 @@ export const EquipmentCard: React.FC<Props> = ({ image, title, description, full
         <>
             <div className={styles.container}>
                 <div className={styles.image}>
-                    <img src={image} />
+                    <img src={image} alt="equipment" />
                 </div>
                 <div className={styles.info}>
                     <div className={styles.top}>
