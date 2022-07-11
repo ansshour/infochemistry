@@ -13,7 +13,7 @@ export const Representive: React.FC<Props> = ({ name, text, image }) => {
             <div className={styles.info}>
                 <p className={styles.name}>{name}</p>
                 {text.map((text) => (
-                    <p className={styles.text}>{text}</p>
+                    <p className={styles.text} key={text}>{text}</p>
                 ))}
             </div>
         </div>

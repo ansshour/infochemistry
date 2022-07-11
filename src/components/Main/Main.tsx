@@ -34,7 +34,7 @@ export const Main = () => {
                     </div>
                 </div>
                 <div className={styles.rightSide}>
-                    {image.map(({ styles, text }, i) => <div className={styles} onClick={() => { setActiveElement(i) }} style={activeElement === i ? { flex: "2" } : {}}><p style={activeElement === i ? { writingMode: "horizontal-tb", transform: "none" } : {}}>{text}</p></div>)}
+                    {image.map(({ styles, text }, i) => <div key={i} className={styles} onClick={() => { setActiveElement(i) }} style={activeElement === i ? { flex: "2" } : {}}><p style={activeElement === i ? { writingMode: "horizontal-tb", transform: "none" } : {}}>{text}</p></div>)}
                 </div>
             </div>
             <Partners />
