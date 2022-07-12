@@ -74,3 +74,49 @@
         gap: 50px;
     }
 }
+
+.aboutTitle {
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 36px;
+}
+
+.about {
+    margin-top: 50px;
+}
+
+.image {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+}
+
+.aboutBlock {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 70px;
+}
+
+.info {
+    font-size: 18px;
+}
+
+.link {
+    margin-top: 20px;
+    font-size: 14px;
+    display: block;
+    color: #9C9C9C;
+    transition: 0.2s;
+}
+
+.link:hover {
+    color: #858585;
+}
+
+
+@media (max-width: 1100px) {
+    .aboutBlock {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

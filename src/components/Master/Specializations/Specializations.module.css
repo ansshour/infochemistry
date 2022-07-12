@@ -35,7 +35,7 @@
 /*container*/
 
 .container {
-    margin-top: 150px;
+    margin-top: 75px;
     display: grid;
     grid-template-columns: 1fr 11fr;
     gap: 167px;

@@ -34,13 +34,35 @@
 
 /*container*/
 
-
 .container {
-    margin-top: 50px;
+    margin-top: 152px;
 }
 
 .title {
     font-size: 30px;
     font-weight: 300;
-    margin-bottom: 50px;
+    margin-bottom: 39px;
+}
+
+.items__wrapper {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 400px 400px;
+}
+
+
+.item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+
+@media (max-width: 995px) {
+    .items__wrapper {
+        grid-template-columns: 1fr;
+    }
 }

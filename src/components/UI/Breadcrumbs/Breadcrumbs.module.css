@@ -2,7 +2,7 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 0px 15px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 14px;
 }
 
@@ -35,12 +35,16 @@
 /*container*/
 
 
-.container {
-    margin-top: 50px;
+.wrapper {
+    font-size: 13px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-top: 45px;
+    padding-bottom: 55px;
+    flex-wrap: wrap;
 }
 
-.title {
-    font-size: 30px;
-    font-weight: 300;
-    margin-bottom: 50px;
+.arrow:last-child {
+    display: none;
 }

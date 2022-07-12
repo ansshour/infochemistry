@@ -34,13 +34,23 @@
 
 /*container*/
 
-
 .container {
-    margin-top: 50px;
+    margin-top: 150px;
 }
+
 
 .title {
     font-size: 30px;
     font-weight: 300;
-    margin-bottom: 50px;
+    margin-bottom: 39px;
+}
+
+
+.info__wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.text {
+    font-size: 18px;
 }

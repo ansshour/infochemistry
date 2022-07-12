@@ -1,9 +1,15 @@
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0px 15px;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1200px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -42,7 +48,6 @@
 .title__wrapper {
     width: 349px;
     position: relative;
-    margin-top: 50px;
     margin-bottom: 85px;
     z-index: 0;
 }

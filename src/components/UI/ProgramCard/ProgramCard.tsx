@@ -7,9 +7,10 @@ type Props = {
     seats: number[];
     studyProgramLink: string;
     format: string;
+    programName?: string;
 }
 
-export const ProgramCard: React.FC<Props> = ({ years, lang, seats, studyProgramLink, format }) => {
+export const ProgramCard: React.FC<Props> = ({ years, lang, seats, studyProgramLink, format, programName }) => {
     return (
         <div className={styles.container}>
             <div className={styles.group}>
@@ -28,7 +29,7 @@ export const ProgramCard: React.FC<Props> = ({ years, lang, seats, studyProgramL
                 </p>
             </div>
             <div className={styles.group}>
-                <p className={styles.main}>Учебный план</p>
+                <p className={styles.main}>{programName || "Учебный план"}</p>
                 <div className={styles.studyProgramm}><a className={styles.desc} href={studyProgramLink}><AiOutlinePaperClip size="15" style={{ fill: "gray", marginRight: "5px" }} />Ссылка</a></div>
             </div>
         </div>

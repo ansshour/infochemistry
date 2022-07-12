@@ -35,12 +35,21 @@
 /*container*/
 
 
-.container {
-    margin-top: 50px;
-}
-
 .title {
     font-size: 30px;
     font-weight: 300;
-    margin-bottom: 50px;
+    margin-bottom: 39px;
+}
+
+.container {
+    margin-top: 159px;
+}
+
+.info {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.text {
+    font-size: 18px;
 }
