@@ -2,8 +2,8 @@ export const headerItems = [
     {
         name: "Абитуриентам", link: "#", id: "abit",
         subElems: [
-            { name: "Школа", link: "/school" },
-            { name: "Бакалавриат", link: "/bachelor" },
+            { name: "Школа", link: "" },
+            { name: "Бакалавриат", link: "" },
             { name: "Магистратура", link: "/master" },
             { name: "Аспирантура", link: "/aspirantura" },
         ]
