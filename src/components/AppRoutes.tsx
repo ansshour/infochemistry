@@ -11,8 +11,6 @@ export const AppRoutes = () => {
             <Route path="/master" element={<Master />} />
             <Route path="/equipment" element={<Equipment />} />
             <Route path="/aspirantura" element={<Aspirantura />} />
-            <Route path="/bachelor" element={<a href='https://ichem.itmo.ru/' target="_blank" />} />
-            <Route path="/school" element={<a href='https://ichem.itmo.ru/' target="_blank" />} />
         </Routes>
     )
 }
