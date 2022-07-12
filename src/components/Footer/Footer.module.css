@@ -138,3 +138,12 @@
         flex-direction: column;
     }
 }
+
+.address a,
+.mail a,
+.phone a {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+}
