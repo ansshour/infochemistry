@@ -127,6 +127,9 @@
 
 }
 
+.contacts a {
+    display: block;
+}
 
 
 @media (max-width: 500px) {
