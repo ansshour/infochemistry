@@ -36,13 +36,13 @@ export const Footer = () => {
                         </div>
                         <div className={styles.contacts}>
                             <div className={styles.address}>
-                                <a href="https://yandex.ru/maps/org/universitet_itmo/1017559385/?indoorLevel=1&ll=30.338353%2C59.927288&utm_source=main_stripe_big&z=17.07" target="_blank"><FaMapMarkerAlt /><p>Санкт-Петербург, Ломоносова, д. 9, 191002</p></a>
+                                <a href="https://yandex.ru/maps/org/universitet_itmo/1017559385/?indoorLevel=1&ll=30.338353%2C59.927288&utm_source=main_stripe_big&z=17.07" target="_blank"><FaMapMarkerAlt /><span>Санкт-Петербург, Ломоносова, д. 9, 191002</span></a>
                             </div>
                             <div className={styles.mail}>
-                                <a href="mailto:skorb@itmo.ru"><FaEnvelope /><p>skorb@itmo.ru</p></a>
+                                <a href="mailto:skorb@itmo.ru"><FaEnvelope /><span>skorb@itmo.ru</span></a>
                             </div>
                             <div className={styles.phone}>
-                                <a href="tel:+79992103977"><FaPhone /><p>+7-999-210-39-77</p></a>
+                                <a href="tel:+79992103977"><FaPhone /><span>+7-999-210-39-77</span></a>
                             </div>
                         </div>
                     </div>
