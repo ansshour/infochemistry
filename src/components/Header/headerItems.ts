@@ -31,7 +31,7 @@ export const headerItems = [
         name: "О центре", link: "#", id: "aboutus",
         subElems: [
             { name: "О нас", link: "#" },
-            { name: "Персоналии", link: "#" },
+            { name: "Персоналии", link: "/personalities" },
             { name: "Вакансии", link: "#" },
             { name: "Контакты", link: "#" },
         ]

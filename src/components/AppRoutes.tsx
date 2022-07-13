@@ -3,6 +3,7 @@ import { Aspirantura } from "./Aspirantura/Aspirantura";
 import { Equipment } from "./Equipment/Equipment";
 import { Main } from "./Main/Main";
 import { Master } from "./Master/Master";
+import { Personalities } from "./Personalities/Personalities";
 
 export const AppRoutes = () => {
     return (
@@ -11,6 +12,7 @@ export const AppRoutes = () => {
             <Route path="/master" element={<Master />} />
             <Route path="/equipment" element={<Equipment />} />
             <Route path="/aspirantura" element={<Aspirantura />} />
+            <Route path="/personalities" element={<Personalities />} />
         </Routes>
     )
 }
