@@ -34,10 +34,9 @@ export const PersonalitiesContent = () => {
                     </div>
                 )}
                 {personalitiesName === "Аспиранты" && (
-                    <div className={styles.elements} style={{ gridTemplateColumns: "1fr 1fr 1fr" }}>
+                    <div className={styles.elements} style={{ gridTemplateColumns: "1fr 1fr", marginLeft: "50px" }}>
                         <img alt="element" src="./images/personalities/elements/3.png" style={{ alignSelf: "start" }} />
                         <img alt="element" src="./images/personalities/elements/3.png" style={{ alignSelf: "end", transform: "rotate(180deg)" }} />
-                        <img alt="element" src="./images/personalities/elements/3.png" style={{ alignSelf: "start" }} />
                     </div>
                 )}
                 {personalitiesName === "Магистранты" && (
@@ -81,10 +80,9 @@ export const PersonalitiesContent = () => {
                     </div>
                 )}
                 {personalitiesName === "Администрация" && (
-                    <div className={styles.elements} style={{ gridTemplateColumns: "1fr 1fr 1fr 1fr" }} >
+                    <div className={styles.elements} style={{ gridTemplateColumns: "1fr 1fr 1fr 1fr", marginLeft: "70px" }} >
                         <img alt="element" src="./images/personalities/elements/10.png" width={136.84} height={132.66} />
                         <img alt="element" src="./images/personalities/elements/10.png" width={136.84} height={132.66} style={{ alignSelf: "end", transform: "rotate(180deg) " }} />
-                        <img alt="element" src="./images/personalities/elements/10.png" width={136.84} height={132.66} />
                     </div>
                 )}
             </div>
