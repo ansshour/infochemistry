@@ -64,3 +64,11 @@
 .personalities {
     display: flex;
 }
+
+
+@media (max-width: 800px) {
+    .personalities {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}

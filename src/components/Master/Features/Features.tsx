@@ -22,7 +22,7 @@ export const Features = () => {
     return (
         <>
             <div className={styles.container}>
-                <h2 className={styles.title}>О программе</h2>
+                <h2 className={styles.title}>Особенности и преимущества</h2>
             </div>
             <div className={styles.table}>
                 <Table data={data} />

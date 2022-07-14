@@ -13,6 +13,8 @@
     background-color: white;
     border-radius: 50%;
     border: 1px solid black;
+    background-position: center;
+    background-size: cover;
 }
 
 .name {
@@ -44,4 +46,42 @@
     display: flex;
     align-items: center;
     gap: 9px;
+}
+
+
+@media (max-width: 1200px) {
+    .container {
+        flex-basis: 100%;
+    }
+}
+
+
+
+@media (max-width: 460px) {
+
+    .container {
+        gap: 15px;
+    }
+
+    .image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .name {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .desc,
+    .contacts {
+        font-size: 10px;
+    }
+}
+
+
+
+
+.resize {
+    flex-basis: 100%;
 }

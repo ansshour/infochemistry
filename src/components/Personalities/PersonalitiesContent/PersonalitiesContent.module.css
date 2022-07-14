@@ -8,15 +8,47 @@
 }
 
 .header {
-    padding: 40px;
     width: 100%;
+    max-width: 943px;
+    height: 113px;
     font-size: 30px;
     border: 1px solid black;
     border-bottom: none;
     border-right: none;
+    display: flex;
+    padding: 0 40px;
+    padding-right: 0;
+    gap: 100px;
+    overflow: hidden;
+}
+
+
+.elements {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 90px;
+}
+
+.header p {
+    align-self: center;
 }
 
 .content {
     display: flex;
     flex-wrap: wrap;
+}
+
+
+
+@media (max-width: 800px) {
+    .container {
+        flex-basis: 100%;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .elements {
+        display: none;
+    }
 }

@@ -3,19 +3,29 @@ import styles from "./Slider.module.css"
 
 
 type Props = {
+    data: {
+        image: string;
+        text: string[];
+        link: string;
+        linkName: string;
+    }[]
+}
+
+
+type Data = {
     image: string;
     text: string[];
     link: string;
     linkName: string;
 }
 
-export const Slider: React.FC<any> = ({ data }) => {
+export const Slider: React.FC<Props> = ({ data }) => {
 
     const [elementOffset, setElementOffset] = useState(0);
     let [activeElement, setActiveElement] = useState(0);
 
 
-    const nextHundler = () => {
+    const nextHandler = () => {
         if (elementOffset > -(data.length - 1) * 100) {
             setElementOffset(elementOffset - 100)
             setActiveElement(activeElement + 1)
@@ -41,7 +51,7 @@ export const Slider: React.FC<any> = ({ data }) => {
             <div className={styles.prev} onClick={prevHundler}></div>
             <div className={styles.slider}>
                 <div className={styles.activeElement} style={{ transform: `translateX(${elementOffset}%)` }}>
-                    {data.map((elem: Props) => {
+                    {data.map((elem: Data) => {
                         return (
                             <div className={styles.slide}>
                                 <div className={styles.image} style={{ backgroundImage: `url(${elem.image})` }}></div>
@@ -54,9 +64,9 @@ export const Slider: React.FC<any> = ({ data }) => {
                     })}
                 </div>
             </div>
-            <div className={styles.next} onClick={nextHundler}></div>
+            <div className={styles.next} onClick={nextHandler}></div>
             <div className={styles.points}>
-                {data.map((elem: Props, id: number) => (
+                {data.map((elem: Data, id: number) => (
                     id === activeElement ? <div className={styles.point} style={{ backgroundColor: "black" }} key={id}></div> : <div className={styles.point} key={id}></div>
                 ))}
             </div>
