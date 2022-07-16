@@ -1,0 +1,89 @@
+.container {
+    box-shadow: 0px 0px 38px 15px rgba(34, 60, 80, 0.05);
+    padding: 30px 30px 20px 30px;
+    border: 1px solid black;
+}
+
+
+.name {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+.desc {
+    font-weight: 300;
+    font-size: 14px;
+    color: #9C9C9C;
+}
+
+.footr {
+    display: flex;
+    justify-content: flex-end;
+}
+
+ul li {
+    margin-left: 10px;
+}
+
+.employmentBtn {
+    padding: 6px 20px;
+    background-color: #D0ECBA;
+    border-radius: 20px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.workExperienceBtn {
+    padding: 6px 20px;
+    background-color: #C1E4FF;
+    border-radius: 20px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+
+.modal__container {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__title {
+    font-size: 34px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.modal__image {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.modalImageBlock {
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.desc__name {
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.descBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

@@ -87,7 +87,7 @@ export const News = () => {
                     <div className={styles.third}>
                         {data.map(({ image, text, date, category }, i) => {
                             return (
-                                i > 4 && i < 8 ? <NewsCard image={image} text={text} date={date} category={category} /> : ""
+                                i > 4 ? <NewsCard image={image} text={text} date={date} category={category} /> : ""
                             )
                         })}
                     </div>
