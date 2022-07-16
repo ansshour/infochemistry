@@ -26,7 +26,7 @@ export const headerItems = [
             { name: "Страница работы научной группы", link: "#" },
         ]
     },
-    { name: "Новости", link: "#", id: "none" },
+    { name: "Новости", link: "/news", id: "none" },
     {
         name: "О центре", link: "#", id: "aboutus",
         subElems: [
