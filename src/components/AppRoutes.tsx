@@ -3,6 +3,7 @@ import { About } from "./About/About";
 import { Aspirantura } from "./Aspirantura/Aspirantura";
 import { Equipment } from "./Equipment/Equipment";
 import { Main } from "./Main/Main";
+import { MainDirections } from "./MainDirections/MainDirections";
 import { Master } from "./Master/Master";
 import { News } from "./News/News";
 import { Personalities } from "./Personalities/Personalities";
@@ -19,6 +20,7 @@ export const AppRoutes = () => {
             <Route path="/news" element={<News />} />
             <Route path="/vacancy" element={<Vacancy />} />
             <Route path="/about" element={<About />} />
+            <Route path="/main_directions" element={<MainDirections />} />
         </Routes>
     )
 }
