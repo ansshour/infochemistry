@@ -22,6 +22,7 @@ export const Vacancy = () => {
         <li>опыт работы в химической лаборатории (обязательно);</li>
         <li>опыт работы с аналитическим оборудованием и оптическими приб...</li>
         <ul>`,
+            about: "    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quod, maxime accusantium necessitatibus harum reiciendis aliquam ut nobis. Eos nisi minus earum ullam quasi pariatur, amet repudiandae? Totam, vero sapiente."
         },
         {
             name: "Научный сотрудник PostDoc (Электрохимические сенсоры)", categories: ["Полная занятость", "Опыт: 1-3 года"], desc: `<p>Каким мы видим кандидата:<p>
@@ -99,9 +100,9 @@ export const Vacancy = () => {
                     </div>
                 </div>
                 <div className={styles.vacancyCards}>
-                    {data.map(({ name, categories, desc }) => {
+                    {data.map(({ name, categories, desc, about }) => {
                         return (
-                            <VacancyCard name={name} categories={categories} desc={desc} />
+                            <VacancyCard name={name} categories={categories} desc={desc} about={about} />
                         )
                     })}
                 </div>

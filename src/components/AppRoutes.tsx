@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { About } from "./About/About";
 import { Aspirantura } from "./Aspirantura/Aspirantura";
 import { Equipment } from "./Equipment/Equipment";
 import { Main } from "./Main/Main";
@@ -17,6 +18,7 @@ export const AppRoutes = () => {
             <Route path="/personalities" element={<Personalities />} />
             <Route path="/news" element={<News />} />
             <Route path="/vacancy" element={<Vacancy />} />
+            <Route path="/about" element={<About />} />
         </Routes>
     )
 }

@@ -104,3 +104,15 @@
     gap: 50px;
     margin-bottom: 70px;
 }
+
+
+@media (max-width: 991px) {
+    .categoryBlock {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .vacancyCards {
+        grid-template-columns: 1fr;
+    }
+}

@@ -7,13 +7,14 @@ type Props = {
     name: string;
     categories: string[];
     desc: string;
+    about?: string;
 }
 
 const dangerTextEnter = (text: string) => {
     return { __html: text };
 }
 
-export const VacancyCard: React.FC<Props> = ({ name, categories, desc }) => {
+export const VacancyCard: React.FC<Props> = ({ name, categories, desc, about }) => {
 
     const [modalActive, SetModalActive] = useState(false);
 
@@ -35,7 +36,18 @@ export const VacancyCard: React.FC<Props> = ({ name, categories, desc }) => {
                         <button className={styles.employmentBtn}>{categories[0]}</button>
                         <button className={styles.workExperienceBtn}>{categories[1]}</button>
                     </div>
-                    <p className={styles.desc__name} dangerouslySetInnerHTML={dangerTextEnter(desc)} />
+                    <div className={styles.line}></div>
+                    <p className={styles.title__about}>О центре</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quod, maxime accusantium necessitatibus harum reiciendis aliquam ut nobis. Eos nisi minus earum ullam quasi pariatur, amet repudiandae? Totam, vero sapiente.</p>
+                    <div className={styles.line}></div>
+                    <p className={styles.title__about}>Научная группа: Хемометрика</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quod, maxime accusantium necessitatibus harum reiciendis aliquam ut nobis. Eos nisi minus earum ullam quasi pariatur, amet repudiandae? Totam, vero sapiente.</p>
+                    <div className={styles.line}></div>
+                    <p className={styles.title__about}>Идеальный кандидат</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quod, maxime accusantium necessitatibus harum reiciendis aliquam ut nobis. Eos nisi minus earum ullam quasi pariatur, amet repudiandae? Totam, vero sapiente.</p>
+                    <div className={styles.line}></div>
+                    <p className={styles.title__about}>Условия</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quod, maxime accusantium necessitatibus harum reiciendis aliquam ut nobis. Eos nisi minus earum ullam quasi pariatur, amet repudiandae? Totam, vero sapiente.</p>
                 </div>
             </Modal>
         </>
