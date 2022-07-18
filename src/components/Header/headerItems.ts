@@ -20,7 +20,7 @@ export const headerItems = [
         name: "Исследования", link: "#", id: "researches",
         subElems: [
             { name: "Основные направления", link: "/main_directions" },
-            { name: "Группы", link: "#" },
+            { name: "Группы", link: "/science_groups" },
             { name: "Публикации", link: "#" },
             { name: "Оборудование", link: "/equipment" },
             { name: "Страница работы научной группы", link: "#" },
