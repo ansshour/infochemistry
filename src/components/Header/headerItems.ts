@@ -33,7 +33,7 @@ export const headerItems = [
             { name: "О нас", link: "/about" },
             { name: "Персоналии", link: "/personalities" },
             { name: "Вакансии", link: "/vacancy" },
-            { name: "Контакты", link: "#" },
+            { name: "Контакты", link: "/contacts" },
         ]
     },
     { name: "Онлайн-образование", link: "#", id: "none" },

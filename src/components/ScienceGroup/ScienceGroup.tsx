@@ -1,7 +1,6 @@
 import { Breadcrumbs } from "../UI/Breadcrumbs/Breadcrumbs"
 import styles from "./ScienceGroup.module.css"
 import { ScienceGroupTable } from "./ScienceGroupTable/ScienceGroupTable"
-import { useState } from "react";
 
 export const ScienceGroup = () => {
 

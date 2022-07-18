@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { About } from "./About/About";
 import { Aspirantura } from "./Aspirantura/Aspirantura";
+import { Contacts } from "./Contacts/Contacts";
 import { Equipment } from "./Equipment/Equipment";
 import { Main } from "./Main/Main";
 import { MainDirections } from "./MainDirections/MainDirections";
@@ -23,6 +24,7 @@ export const AppRoutes = () => {
             <Route path="/about" element={<About />} />
             <Route path="/main_directions" element={<MainDirections />} />
             <Route path="/science_groups" element={<ScienceGroup />} />
+            <Route path="/contacts" element={<Contacts />} />
         </Routes>
     )
 }

@@ -4,6 +4,7 @@
     width: 218px;
     padding: 3px 10px 3px 10px;
     box-sizing: border-box;
+    font-family: inherit;
 }
 
 .input:focus {
