@@ -82,8 +82,8 @@ export const Contacts = () => {
                         <p className={styles.contactFormDesc}>Если у вас остались вопросы по поводу формата, процесса обучения, поступления или по поводу сотрудничества.</p>
                     </div>
                     <div className={[styles.form, styles.first].join(" ")}>
-                        <Input placeholder="e-mail" width={285} height={38} fontsize={18} />
-                        <Input placeholder="Имя" width={285} height={38} fontsize={18} />
+                        <Input placeholder="e-mail" width={285} height={38} fontsize={18} style={{ height: "38px" }} />
+                        <Input placeholder="Имя" width={285} height={38} fontsize={18} style={{ height: "38px" }} />
                     </div>
                     <div className={[styles.form, styles.second].join(" ")}>
                         <textarea className={styles.message} placeholder="Сообщение" />

@@ -5,10 +5,11 @@ type Props = {
     width?: number;
     height?: number;
     fontsize?: number;
+    style?: any;
 }
 
-export const Input: React.FC<Props> = ({ placeholder, width, height, fontsize }) => {
+export const Input: React.FC<Props> = ({ placeholder, width, height, fontsize, style }) => {
     return (
-        <input placeholder={placeholder} className={styles.input} style={{ width: `${width}px`, height: `${height}px`, fontSize: `${fontsize}px` }} />
+        <input placeholder={placeholder} className={styles.input} style={{ maxWidth: `${width}px`, maxHeight: `${height}px`, fontSize: `${fontsize}px`, ...style }} />
     )
 }
