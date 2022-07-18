@@ -5,7 +5,7 @@ type Props = {
     width?: number;
     height?: number;
     fontsize?: number;
-    style?: any;
+    style?: React.CSSProperties;
 }
 
 export const Input: React.FC<Props> = ({ placeholder, width, height, fontsize, style }) => {
