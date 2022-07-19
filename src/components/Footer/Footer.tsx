@@ -2,6 +2,7 @@ import { Button } from "../UI/Button/Button"
 import styles from "./Footer.module.css"
 import { Input } from "../UI/Input/Input"
 import { FaVk, FaInstagram, FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
+import logo from "./res/logo2.png"
 
 export const Footer = () => {
 
@@ -19,7 +20,7 @@ export const Footer = () => {
             <div className={styles.wrapper}>
                 <div className={[styles.container, styles.first].join(" ")}>
                     <div className={styles.left}>
-                        <img src="./images/logo2.png" alt="logo" className={styles.logo} />
+                        <img src={logo} alt="logo" className={styles.logo} />
                         <div className={styles.search}>
                             <Input placeholder="e-mail" />
                             <Button height="27" width="122">Подписаться</Button>
@@ -42,7 +43,7 @@ export const Footer = () => {
                                 <a href="mailto:skorb@itmo.ru"><FaEnvelope /><p>skorb@itmo.ru</p></a>
                             </div>
                             <div className={styles.phone}>
-                                <a href = "tel:+79992103977"><FaPhone /><p>+7-999-210-39-77</p></a>
+                                <a href="tel:+79992103977"><FaPhone /><p>+7-999-210-39-77</p></a>
                             </div>
                         </div>
                     </div>

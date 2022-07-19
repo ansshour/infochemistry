@@ -3,6 +3,7 @@ import styles from "./Header.module.css"
 import { headerItems } from "./headerItems"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import logo from "./res/logo.png"
 
 export const Header = () => {
 
@@ -13,7 +14,7 @@ export const Header = () => {
         <>
             <div className={styles.container__wrapper}>
                 <div className={styles.container}>
-                    <Link to="/"><img src="./images/header/logo.png" height={33} className={styles.logo} /></Link>
+                    <Link to="/"><img src={logo} height={33} className={styles.logo} /></Link>
                     {/* desktop menu */}
                     <nav className={styles.nav}>
                         <ul>

@@ -10,6 +10,8 @@ import { News } from "./News/News";
 import { Personalities } from "./Personalities/Personalities";
 import { ScienceGroup } from "./ScienceGroup/ScienceGroup";
 import { Vacancy } from "./Vacancy/Vacancy";
+import { VideoDetail } from "./VideoLectures/VideoDetail/VideoDetail";
+import { VideoLectures } from "./VideoLectures/VideoLectures";
 
 export const AppRoutes = () => {
     return (
@@ -25,6 +27,8 @@ export const AppRoutes = () => {
             <Route path="/main_directions" element={<MainDirections />} />
             <Route path="/science_groups" element={<ScienceGroup />} />
             <Route path="/contacts" element={<Contacts />} />
+            <Route path="/video_lectures" element={<VideoLectures />} />
+            <Route path="/video_lectures/:id" element={<VideoDetail />} />
         </Routes>
     )
 }

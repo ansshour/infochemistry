@@ -13,7 +13,7 @@ export const headerItems = [
         subElems: [
             { name: "Расписание", link: "#" },
             { name: "Стажировки", link: "#" },
-            { name: "Видеолекции", link: "#" },
+            { name: "Видеолекции", link: "/video_lectures" },
         ]
     },
     {
