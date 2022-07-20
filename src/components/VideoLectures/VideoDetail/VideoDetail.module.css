@@ -49,6 +49,7 @@
 
     margin: auto;
     margin-bottom: 39px;
+    height: 630px;
 }
 
 .arrowLeft {
@@ -182,4 +183,55 @@
 .second {
     gap: 30px;
     align-items: center;
+}
+
+
+@media (max-width: 1592px) {
+    .video {
+        width: 90%;
+    }
+}
+
+@media (max-width: 991px) {
+    .video {
+        height: 350px;
+        width: 70%;
+    }
+
+    .teacherInfo {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .emails {
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .video {
+        height: 200px;
+        width: 75%;
+    }
+
+    .arrowRight {
+        right: -45px;
+    }
+
+    .arrowLeft {
+        left: -45px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .desc {
+        font-size: 16px;
+    }
+
+    .fileName {
+        font-size: 14px;
+    }
 }

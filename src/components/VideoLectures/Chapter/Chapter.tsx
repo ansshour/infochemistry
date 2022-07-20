@@ -18,6 +18,11 @@ type Props = {
 
 
 export const Chapter: React.FC<Props> = ({ title, icon, numberVideos, videos }) => {
+
+    const clickChangeUrl = (id: number) => {
+        window.location.href = window.location.href + "/" + id;
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.topBlock}>
@@ -29,7 +34,7 @@ export const Chapter: React.FC<Props> = ({ title, icon, numberVideos, videos }) 
                 <span className={styles.moreBtn}>еще</span>
             </div>
             <div className={styles.videosContainer}>
-                {videos.map(({ image, name, authorName, date, time }) => <VideoCard image={image} name={name} authorName={authorName} date={date} time={time} />)}
+                {videos.map(({ image, name, authorName, date, time }) => <VideoCard image={image} name={name} authorName={authorName} date={date} time={time} onClick={() => { clickChangeUrl(1) }} />)}
             </div>
         </div>
     )

@@ -6,10 +6,10 @@ type Props = {
     authorName: string;
     date: string;
     time: string;
-    onClick?: () => void;
+    onClick?: any; // нужно поменять тип
 }
 
-export const VideoCard: React.FC<Props> = ({ image, name, authorName, date, time }) => {
+export const VideoCard: React.FC<Props> = ({ image, name, authorName, date, time, onClick }) => {
 
     const toTimeAgoFormat = (date: string) => {
         let difference = 0;
@@ -83,10 +83,10 @@ export const VideoCard: React.FC<Props> = ({ image, name, authorName, date, time
 
     return (
         <div className={styles.container}>
-            <div className={styles.video} style={{ backgroundImage: `url(${image})` }}>
+            <div className={styles.video} style={{ backgroundImage: `url(${image})` }} onClick={onClick}>
                 <span className={styles.timer}>{time}</span>
             </div>
-            <p className={styles.name}>{name}</p>
+            <p className={styles.name} onClick={onClick}>{name}</p>
             <div className={styles.info}>
                 <p className={styles.authorName}>{authorName}</p>
                 <p className={styles.date}>{toTimeAgoFormat(date)}</p>

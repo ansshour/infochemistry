@@ -21,7 +21,7 @@ export const VideoDetail = () => {
                     {data.name}
                 </h1>
                 <div className={styles.video}>
-                    <iframe width="100%" height="630px" src={`https://www.youtube.com/embed/${data.video}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${data.video}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     <span className={styles.arrowRight}></span>
                     <span className={styles.arrowLeft}></span>
                 </div>
