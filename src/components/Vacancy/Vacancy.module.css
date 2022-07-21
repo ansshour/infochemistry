@@ -1,0 +1,118 @@
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0px 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: none;
+    }
+}
+
+
+/*container*/
+
+
+.title {
+    max-width: 349px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 45px;
+    position: relative;
+    z-index: 1;
+}
+
+.title__wrapper {
+    width: 200px;
+    position: relative;
+    z-index: 0;
+    margin-bottom: 50px;
+}
+
+.title__wrapper:before {
+    content: "";
+    width: 100%;
+    height: 18px;
+    background-color: #C8F1FD;
+    position: absolute;
+    z-index: 1;
+    top: 11px;
+    left: -10px;
+}
+
+
+.searchBlock {
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    gap: 52px;
+    align-items: center;
+}
+
+
+@media (max-width: 450px) {
+    .searchBlock {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+.categoryBlock {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.category p {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.category div {
+    display: flex;
+    gap: 30px;
+}
+
+.vacancyCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 70px;
+}
+
+
+@media (max-width: 991px) {
+    .categoryBlock {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .vacancyCards {
+        grid-template-columns: 1fr;
+    }
+}

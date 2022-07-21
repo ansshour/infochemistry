@@ -1,0 +1,32 @@
+.accordion {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+}
+
+.accordion p {
+    transform: translateY(1px);
+}
+
+.arrow {
+    transition: 0.3s;
+}
+
+.arrow.open {
+    transform: scaleY(-1)
+}
+
+.content {
+    margin-top: 3px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+}
+
+.content.show {
+    max-height: 1000px;
+    transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+}
