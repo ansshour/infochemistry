@@ -12,7 +12,6 @@ export const headerItems = [
         name: "Студентам", link: "#", id: "stud",
         subElems: [
             { name: "Расписание", link: "#" },
-            { name: "Стажировки", link: "#" },
             { name: "Видеолекции", link: "/video_lectures" },
         ]
     },
