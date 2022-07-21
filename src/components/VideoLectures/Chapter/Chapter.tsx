@@ -7,6 +7,7 @@ type Videos = {
     authorName: string;
     date: string;
     time: string;
+    id?: number;
 }
 
 type Props = {
@@ -34,7 +35,7 @@ export const Chapter: React.FC<Props> = ({ title, icon, numberVideos, videos }) 
                 <span className={styles.moreBtn}>еще</span>
             </div>
             <div className={styles.videosContainer}>
-                {videos.map(({ image, name, authorName, date, time }) => <VideoCard image={image} name={name} authorName={authorName} date={date} time={time} onClick={() => { clickChangeUrl(1) }} />)}
+                {videos.map(({ image, name, authorName, date, time, id }) => <VideoCard image={image} name={name} authorName={authorName} date={date} time={time} id={id} />)}
             </div>
         </div>
     )

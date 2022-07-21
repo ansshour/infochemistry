@@ -20,6 +20,7 @@ export const VideoLectures = () => {
             numberVideos: 23,
             videos: [
                 {
+                    id: 1,
                     image: "#",
                     name: "Комплексные соединения",
                     authorName: "Екатерина Скорб",
@@ -27,6 +28,7 @@ export const VideoLectures = () => {
                     time: "1:00:59"
                 },
                 {
+                    id: 2,
                     image: "#",
                     name: "Комплексные соединения",
                     authorName: "Екатерина Скорб",
@@ -34,6 +36,7 @@ export const VideoLectures = () => {
                     time: "1:00:59"
                 },
                 {
+                    id: 3,
                     image: "#",
                     name: "Комплексные соединения",
                     authorName: "Екатерина Скорб",
@@ -48,6 +51,7 @@ export const VideoLectures = () => {
             numberVideos: 11,
             videos: [
                 {
+                    id: 4,
                     image: "#",
                     name: "Сходимость последовательности",
                     authorName: "Бойцев Антон",
@@ -55,6 +59,7 @@ export const VideoLectures = () => {
                     time: "1:00:59"
                 },
                 {
+                    id: 5,
                     image: "#",
                     name: "Комплексные тригонометрические функции",
                     authorName: "Бойцев Антон",
@@ -62,6 +67,7 @@ export const VideoLectures = () => {
                     time: "1:00:59"
                 },
                 {
+                    id: 6,
                     image: "#",
                     name: "Бином Ньютона",
                     authorName: "Бойцев Антон",

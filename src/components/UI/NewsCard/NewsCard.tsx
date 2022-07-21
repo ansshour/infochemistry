@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./NewsCard.module.css"
 
 
@@ -22,14 +23,16 @@ export const NewsCard: React.FC<Props> = ({ image, text, date, category }) => {
 
     return (
         <div className={styles.container}>
-            <div>
-                <div className={styles.image} style={{ backgroundImage: `url(${image})` }}>
+            <Link to="/news/1">
+                <div>
+                    <div className={styles.image} style={{ backgroundImage: `url(${image})` }}>
 
+                    </div>
+                    <div className={styles.textWrapper}>
+                        <p className={styles.text}>{text}</p>
+                    </div>
                 </div>
-                <div className={styles.textWrapper}>
-                    <p className={styles.text}>{text}</p>
-                </div>
-            </div>
+            </Link>
             <div className={styles.footerCard}>
                 <p className={styles.date}>{date}</p>
                 <div className={styles.categoryButton} style={{ backgroundColor: `${getColorByCategory(category)}` }}>{category}</div>

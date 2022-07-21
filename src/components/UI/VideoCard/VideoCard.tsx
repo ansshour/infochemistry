@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./VideoCard.module.css"
 
 type Props = {
@@ -6,10 +7,10 @@ type Props = {
     authorName: string;
     date: string;
     time: string;
-    onClick?: any; // нужно поменять тип
+    id?: number;
 }
 
-export const VideoCard: React.FC<Props> = ({ image, name, authorName, date, time, onClick }) => {
+export const VideoCard: React.FC<Props> = ({ image, name, authorName, date, time, id }) => {
 
     const toTimeAgoFormat = (date: string) => {
         let difference = 0;
@@ -83,10 +84,12 @@ export const VideoCard: React.FC<Props> = ({ image, name, authorName, date, time
 
     return (
         <div className={styles.container}>
-            <div className={styles.video} style={{ backgroundImage: `url(${image})` }} onClick={onClick}>
-                <span className={styles.timer}>{time}</span>
-            </div>
-            <p className={styles.name} onClick={onClick}>{name}</p>
+            <Link to={`/video_lectures/${id}`}>
+                <div className={styles.video} style={{ backgroundImage: `url(${image})` }}>
+                    <span className={styles.timer}>{time}</span>
+                </div>
+            </Link>
+            <Link to={`/video_lectures/${id}`}> <p className={styles.name}>{name}</p></Link>
             <div className={styles.info}>
                 <p className={styles.authorName}>{authorName}</p>
                 <p className={styles.date}>{toTimeAgoFormat(date)}</p>

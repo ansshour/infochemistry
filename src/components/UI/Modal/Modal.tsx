@@ -4,14 +4,15 @@ type Props = {
     active: boolean;
     setActive: (arg: boolean) => void;
     children?: React.ReactNode;
+    withCloseBtn?: boolean;
 }
-export const Modal = ({ active, setActive, children }: Props) => {
+export const Modal = ({ active, setActive, children, withCloseBtn }: Props) => {
     return (
         <>
             <div className={active ? `${styles.modal} ${styles.active}` : `${styles.modal}`} onClick={() => setActive(false)}>
                 <div className={active ? `${styles.content} ${styles.active}` : `${styles.content}`} onClick={e => e.stopPropagation()}>
                     {/* <div className={styles.close}><GrClose size={45} /></div> */}
-                    <div className={styles.close} onClick={() => { setActive(false) }}>
+                    <div className={styles.close} onClick={() => { setActive(false) }} style={!withCloseBtn ? { display: "none" } : {}}>
                         <div className={[styles.line, styles.first].join(" ")}></div>
                         <div className={[styles.line, styles.second].join(" ")}></div>
                     </div>
