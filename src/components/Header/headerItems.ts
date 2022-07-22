@@ -2,8 +2,6 @@ export const headerItems = [
     {
         name: "Абитуриентам", link: "#", id: "abit",
         subElems: [
-            // { name: "Школа", link: "" },
-            // { name: "Бакалавриат", link: "" },
             { name: "Магистратура", link: "/master" },
             { name: "Аспирантура", link: "/aspirantura" },
         ]
@@ -11,7 +9,7 @@ export const headerItems = [
     {
         name: "Студентам", link: "#", id: "stud",
         subElems: [
-            { name: "Расписание", link: "#" },
+            { name: "Расписание", link: "/schedule" },
             { name: "Видеолекции", link: "/video_lectures" },
         ]
     },

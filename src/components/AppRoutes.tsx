@@ -10,6 +10,7 @@ import { News } from "./News/News";
 import { NewsDetail } from "./News/NewsDetail/NewsDetail";
 import { Personalities } from "./Personalities/Personalities";
 import { Publications } from "./Publications/Publications";
+import { Schedule } from "./Schedule/Schedule";
 import { ScienceGroup } from "./ScienceGroup/ScienceGroup";
 import { Vacancy } from "./Vacancy/Vacancy";
 import { VideoDetail } from "./VideoLectures/VideoDetail/VideoDetail";
@@ -33,6 +34,7 @@ export const AppRoutes = () => {
             <Route path="/video_lectures" element={<VideoLectures />} />
             <Route path="/video_lectures/:id" element={<VideoDetail />} />
             <Route path="/publications" element={<Publications />} />
+            <Route path="/schedule" element={<Schedule />} />
         </Routes>
     )
 }
