@@ -20,7 +20,6 @@ export const headerItems = [
             { name: "Группы", link: "/science_groups" },
             { name: "Публикации", link: "/publications" },
             { name: "Оборудование", link: "/equipment" },
-            { name: "Страница работы научной группы", link: "#" },
         ]
     },
     { name: "Новости", link: "/news", id: "none" },

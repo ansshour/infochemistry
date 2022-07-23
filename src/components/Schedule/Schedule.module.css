@@ -110,3 +110,82 @@
         justify-self: start;
     }
 }
+
+
+.scheduleGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.dayOfWeek {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+
+}
+
+.area {
+    min-height: 200px;
+    min-width: 200px;
+    border-bottom: 1px solid lightgray;
+    overflow: hidden;
+    display: flex;
+}
+
+.scheaduleWrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 100fr;
+    grid-template-areas:
+        "timeWrite week"
+        "time content";
+    border-top: 1px solid lightgray;
+    margin-bottom: 75px;
+}
+
+.Weeks {
+    grid-area: week;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-bottom: 1px solid lightgray;
+}
+
+.Weeks p {
+    font-weight: 500;
+    font-size: 20px;
+    padding: 17px 0;
+    justify-self: center;
+}
+
+.times {
+    grid-area: time;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    align-items: center;
+    border-right: 1px solid lightgray;
+    padding-right: 20px;
+}
+
+.times p {
+    font-weight: 300;
+    font-size: 20px;
+    justify-self: center;
+}
+
+.timeWrite {
+    grid-area: timeWrite;
+    font-weight: 300;
+    font-size: 20px;
+    justify-self: center;
+    padding: 17px 0;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+@media (max-width: 1440px) {
+    .scheaduleWrapper {
+        overflow-x: scroll;
+    }
+}

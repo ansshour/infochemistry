@@ -1,0 +1,82 @@
+.container {
+    position: relative;
+    font-family: "Nunito", sans-serif;
+    background-color: white;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.container:hover {
+    flex: 0 0 100%;
+}
+
+.leftLine {
+    /* position: absolute; */
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #A50AFF;
+    display: block;
+    transition: 0.3s;
+}
+
+.time {
+    font-weight: 700;
+    font-size: 14px;
+    color: #A50AFF;
+}
+
+.content {
+    margin-left: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 14px;
+    padding-bottom: 24px;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19.1px;
+    width: 190px;
+}
+
+.teacher {
+    display: flex;
+    gap: 7px;
+    width: 190px;
+}
+
+.teacher img {
+    align-self: flex-start;
+    transform: translateY(2px);
+}
+
+.teacher p {
+    align-self: flex-start;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16.79px;
+}
+
+.place {
+    display: flex;
+    gap: 7px;
+    width: 190px;
+}
+
+.place img {
+    align-self: flex-start;
+    transform: translateY(2px);
+}
+
+.place p {
+    align-self: flex-start;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16.79px;
+}
