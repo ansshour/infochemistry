@@ -127,7 +127,7 @@
     min-height: 200px;
     min-width: 200px;
     border-bottom: 1px solid lightgray;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
 }
 

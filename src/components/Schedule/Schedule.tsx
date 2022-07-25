@@ -85,7 +85,8 @@ export const Schedule = () => {
                         <div className={styles.dayOfWeek}>
                             <div className={styles.area}><ScheduleCard time="8:20" name="Неорганическая химия" teacher="Скорб Екатерина Владимировна" place={{ auditorium: "ауд.1123", address: "ул.Ломоносова, 9" }} color="#A50AFF" /></div>
                             <div className={styles.area}><ScheduleCard time="10:00" name="Неорганическая химия" teacher="Скорб Екатерина Владимировна" place={{ auditorium: "ауд.1123", address: "ул.Ломоносова, 9" }} color="#A50AFF" /></div>
-                            <div className={styles.area}><ScheduleCard time="11:40" name="Неорганическая химия" teacher="Скорб Екатерина Владимировна" place={{ auditorium: "ауд.1123", address: "ул.Ломоносова, 9" }} color="#A50AFF" /></div>
+                            <div className={styles.area}><ScheduleCard time="11:40" name="Неорганическая химия" teacher="Скорб Екатерина Владимировна" place={{ auditorium: "ауд.1123", address: "ул.Ломоносова, 9" }} color="#A50AFF" />
+                                <ScheduleCard time="11:40" name="Неорганическая химия" teacher="Скорб Екатерина Владимировна" place={{ auditorium: "ауд.1123", address: "ул.Ломоносова, 9" }} color="#A50AFF" /></div>
                             <div className={styles.area}></div>
                             <div className={styles.area}></div>
                             <div className={styles.area}></div>
