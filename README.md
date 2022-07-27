@@ -1,1 +1,3 @@
-ITMO infochemistry with React.js
+ITMO infochemistry with React.js\
+in progress\
+https://infochemistry.netlify.app\
