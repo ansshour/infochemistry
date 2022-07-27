@@ -95,7 +95,7 @@ export const Schedule = () => {
                         </div>
                         <div className={styles.dayOfWeek}>
                             <div className={styles.area}></div>
-                            <div className={styles.area}><ScheduleCard time="10:00" name="Неорганическая химия" teacher="Скорб Екатерина Владимировна" place={{ auditorium: "ауд.1123", address: "ул.Ломоносова, 9" }} color="#0091FF" /></div>
+                            <div className={styles.area}><ScheduleCard time="10:00" name="Неорганическая химия" teacher="Скорб Екатерина Владимировна" place={{ auditorium: "ауд.1123", address: "ул.Ломоносова, 9" }} color="#0091FF" even={false} /></div>
                             <div className={styles.area}><ScheduleCard time="11:40" name="Дополнительные главы линейной алгебры" teacher="Тушавин Глеб Владимирович" place={{ auditorium: "ауд.1320", address: "ул.Ломоносова, 9" }} color="#F7B500" /></div>
                             <div className={styles.area}></div>
                             <div className={styles.area}></div>
@@ -116,7 +116,7 @@ export const Schedule = () => {
                         <div className={styles.dayOfWeek}>
                             <div className={styles.area}></div>
                             <div className={styles.area}></div>
-                            <div className={styles.area}><ScheduleCard time="11:40" name="Молекулярное моделирование и машинное обучение" teacher="Нестеров Павел Вячеславович" place={{ auditorium: "ауд.1123", address: "ул.Ломоносова, 9" }} color="#F7B500" /></div>
+                            <div className={styles.area}><ScheduleCard time="11:40" name="Молекулярное моделирование и машинное обучение" teacher="Нестеров Павел Вячеславович" place={{ auditorium: "ауд.1123", address: "ул.Ломоносова, 9" }} color="#F7B500" even={true} /></div>
                             <div className={styles.area}></div>
                             <div className={styles.area}></div>
                             <div className={styles.area}></div>
@@ -124,8 +124,8 @@ export const Schedule = () => {
                             <div className={styles.area}></div>
                         </div>
                         <div className={styles.dayOfWeek}>
-                            <div className={styles.area}><ScheduleCard time="8:20" name="История" color="#0091FF" /></div>
-                            <div className={styles.area}><ScheduleCard time="10:00" name="Программирование" teacher="Блохина Елена Николаевна" place={{ auditorium: "ауд.304", address: "Кронверский, 49" }} color="#A50AFF" /></div>
+                            <div className={styles.area}><ScheduleCard time="8:20" name="История" color="#0091FF" even={false} /></div>
+                            <div className={styles.area}><ScheduleCard time="10:00" name="Программирование" teacher="Блохина Елена Николаевна" place={{ auditorium: "ауд.304", address: "Кронверский, 49" }} color="#A50AFF" even={true} /></div>
                             <div className={styles.area}></div>
                             <div className={styles.area}></div>
                             <div className={styles.area}></div>
@@ -136,7 +136,7 @@ export const Schedule = () => {
                         <div className={styles.dayOfWeek}>
                             <div className={styles.area}><ScheduleCard time="8:20" name="Программирование" teacher="Блохина Елена Николаевна" place={{ auditorium: "ауд.304", address: "Кронверский, 49" }} color="#A50AFF" /></div>
                             <div className={styles.area}>
-                                <ScheduleCard time="10:00" name="Программирование" teacher="Блохина Елена Николаевна" place={{ auditorium: "ауд.304", address: "Кронверский, 49" }} color="#A50AFF" />
+                                <ScheduleCard time="10:00" name="Программирование" teacher="Блохина Елена Николаевна" place={{ auditorium: "ауд.304", address: "Кронверский, 49" }} color="#A50AFF" even={true} />
                                 {/* <ScheduleCard time="10:00" name="Программирование" teacher="Блохина Елена Николаевна" place={{ auditorium: "ауд.304", address: "Кронверский, 49" }} color="#A50AFF" /> */}
                             </div>
                             <div className={styles.area}></div>

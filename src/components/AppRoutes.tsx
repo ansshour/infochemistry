@@ -8,6 +8,11 @@ import { MainDirections } from "./MainDirections/MainDirections";
 import { Master } from "./Master/Master";
 import { News } from "./News/News";
 import { NewsDetail } from "./News/NewsDetail/NewsDetail";
+import { Auth } from "./PersonalAccount/Auth/Auth";
+import { ChangePassword } from "./PersonalAccount/ChangePassword/ChangePassword";
+import { Confirm } from "./PersonalAccount/Confirm/Confirm";
+import { Register } from "./PersonalAccount/Register/Register";
+import { Restore } from "./PersonalAccount/Restore/Restore";
 import { Personalities } from "./Personalities/Personalities";
 import { Publications } from "./Publications/Publications";
 import { Schedule } from "./Schedule/Schedule";
@@ -35,6 +40,11 @@ export const AppRoutes = () => {
             <Route path="/video_lectures/:id" element={<VideoDetail />} />
             <Route path="/publications" element={<Publications />} />
             <Route path="/schedule" element={<Schedule />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/register/confirm" element={<Confirm />} />
+            <Route path="/restore" element={<Restore />} />
+            <Route path="/restore/change_password" element={<ChangePassword />} />
         </Routes>
     )
 }

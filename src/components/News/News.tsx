@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Breadcrumbs } from "../UI/Breadcrumbs/Breadcrumbs"
 import { Button } from "../UI/Button/Button"
 import { CategoryButton } from "../UI/CategoryButton/CategoryButton"
@@ -46,6 +46,7 @@ export const News = () => {
         setIsActiveBtns({ ...isActiveBtns, external: !isActiveBtns.external })
     }
 
+
     return (
         <>
             <Breadcrumbs info={info} />
@@ -73,21 +74,21 @@ export const News = () => {
                     <div className={styles.first}>
                         {data.map(({ image, text, date, category }, i) => {
                             return (
-                                i < 3 ? <NewsCard image={image} text={text} date={date} category={category} /> : ""
+                                i < 3 ? <NewsCard key={i} image={image} text={text} date={date} category={category} /> : ""
                             )
                         })}
                     </div>
                     <div className={styles.second}>
                         {data.map(({ image, text, date, category }, i) => {
                             return (
-                                i > 2 && i < 5 ? <NewsCard image={image} text={text} date={date} category={category} /> : ""
+                                i > 2 && i < 5 ? <NewsCard key={i} image={image} text={text} date={date} category={category} /> : ""
                             )
                         })}
                     </div>
                     <div className={styles.third}>
                         {data.map(({ image, text, date, category }, i) => {
                             return (
-                                i > 4 ? <NewsCard image={image} text={text} date={date} category={category} /> : ""
+                                i > 4 ? <NewsCard key={i} image={image} text={text} date={date} category={category} /> : ""
                             )
                         })}
                     </div>

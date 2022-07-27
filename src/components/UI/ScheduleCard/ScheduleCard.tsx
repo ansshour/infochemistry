@@ -15,10 +15,11 @@ type Props = {
     teacher?: string;
     place?: Place;
     color?: string;
+    even?: boolean;
 }
 
 
-export const ScheduleCard: React.FC<Props> = ({ time, name, teacher, place, color }) => {
+export const ScheduleCard: React.FC<Props> = ({ time, name, teacher, place, color, even }) => {
 
     const [isShowDetailInfo, setIsShowDetailInfo] = useState(false);
 
@@ -41,7 +42,14 @@ export const ScheduleCard: React.FC<Props> = ({ time, name, teacher, place, colo
                 }>
                 <div className={styles.leftLine} style={{ backgroundColor: `${color}` }}>
                     <div className={styles.content}>
-                        <p className={styles.time} style={{ color: `${color}` }}>{time}</p>
+                        <div className={styles.top}>
+                            <p className={styles.time} style={{ color: `${color}` }}>{time}</p>
+                            {even !== undefined && (
+                                <div className={styles.weekType}>
+                                    {even ? "чет." : "нечет."}
+                                </div>)
+                            }
+                        </div>
                         <p className={styles.name}>{name}</p>
                         {teacher !== undefined && (
                             <div className={styles.teacher}>
@@ -62,7 +70,14 @@ export const ScheduleCard: React.FC<Props> = ({ time, name, teacher, place, colo
                 </div>
                 {isShowDetailInfo &&
                     <div className={styles.detailInfo}>
-                        <div className={styles.type__detail} style={{ backgroundColor: `${color}` }}>Лекция</div>
+                        <div className={styles.top__detail}>
+                            <div className={styles.type__detail} style={{ backgroundColor: `${color}` }}>Лекция</div>
+                            {even !== undefined && (
+                                <div className={styles.weekType}>
+                                    {even ? "чет." : "нечет."}
+                                </div>)
+                            }
+                        </div>
                         <p className={styles.name__detail}>{name}</p>
                         {teacher !== undefined && (
                             <div className={styles.teacher__detail}>

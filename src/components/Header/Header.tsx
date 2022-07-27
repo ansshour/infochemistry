@@ -20,8 +20,8 @@ export const Header = () => {
                         <ul>
                             {headerItems.map(({ name, link, subElems }) => {
                                 return (
-                                    <div className={styles.menuElement}>
-                                        <li key={name} className={styles.navItem}>
+                                    <div className={styles.menuElement} key={name}>
+                                        <li className={styles.navItem}>
                                             <Link to={link}>{name}</Link>
                                             {subElems && (
                                                 <ul className={styles.subMenu}>
@@ -57,7 +57,7 @@ export const Header = () => {
                 <nav className={styles.navMobile}>
                     <ul>
                         {headerItems.map(({ name, link, subElems }) => (
-                            <div className={styles.menuElement__mobile}>
+                            <div className={styles.menuElement__mobile} key={name}>
                                 <li key={name} className={styles.navItem__mobile}>
                                     <Link to={link}>{name}</Link>
                                     {subElems && (

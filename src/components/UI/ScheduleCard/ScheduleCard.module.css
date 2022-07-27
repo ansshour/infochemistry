@@ -82,12 +82,12 @@
     background-color: white;
     padding: 20px;
     z-index: 3;
-    right: -205px;
-    top: 0;
+    right: -305px;
+    top: 5px;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0px 0px 29px -4px rgba(34, 60, 80, 0.2);
-    width: 200px;
+    width: 300px;
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -133,4 +133,28 @@
 
 .time__detail svg {
     fill: #969696;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.weekType {
+    background-color: #63C018;
+    color: white;
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 53px;
+    height: 15px;
+}
+
+.top__detail {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
 }

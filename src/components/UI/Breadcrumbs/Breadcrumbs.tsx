@@ -17,10 +17,10 @@ export const Breadcrumbs: React.FC<Props> = ({ info }) => {
             <div className={styles.wrapper}>
                 {info.map(({ name, link }) => {
                     return (
-                        <>
+                        <div key={name}>
                             <Link to={link}>{name}</Link>
                             <img className={styles.arrow} src={arrow} />
-                        </>
+                        </div>
                     )
                 })}
             </div>

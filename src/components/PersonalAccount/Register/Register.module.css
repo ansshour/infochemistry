@@ -1,0 +1,82 @@
+.container {
+    background: #F6FDFF;
+    background: -webkit-linear-gradient(right, #F6FDFF, #A0AEF5);
+    background: -moz-linear-gradient(right, #F6FDFF, #A0AEF5);
+    background: linear-gradient(to left, #F6FDFF, #A0AEF5);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Raleway", sans-serif;
+}
+
+.auth {
+    width: 100%;
+    max-width: 692px;
+    min-height: 519px;
+    box-sizing: border-box;
+}
+
+.top {
+    background-color: #FCFBF8;
+    border: 1px solid black;
+    box-shadow: 0px 0px 16px 12px rgba(34, 60, 80, 0.03);
+    padding: 0 34px;
+}
+
+.register {
+    padding: 5px;
+    font-style: 20px;
+    cursor: pointer;
+}
+
+.footer {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ru,
+.en {
+    cursor: pointer;
+}
+
+.title {
+    font-size: 30px;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.label {
+    font-size: 16px;
+}
+
+.group {
+    display: grid;
+    margin-top: 15px;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+
+@media (max-width: 480px) {
+    .auth {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+
+@media (max-width: 650px) {
+    .group {
+        grid-template-columns: 1fr;
+    }
+}

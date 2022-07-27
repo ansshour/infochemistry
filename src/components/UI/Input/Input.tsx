@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styles from "./Input.module.css"
+import toggleVissible from "./res/icons/togglevissible.svg"
 
 type Props = {
     placeholder: string;
@@ -6,10 +8,26 @@ type Props = {
     height?: number;
     fontsize?: number;
     style?: React.CSSProperties;
+    password?: boolean;
 }
 
-export const Input: React.FC<Props> = ({ placeholder, width, height, fontsize, style }) => {
+export const Input: React.FC<Props> = ({ placeholder, width, height, fontsize, style, password }) => {
+
+    const [currentType, setCurrentType] = useState(password ? "password" : "text");
+
     return (
-        <input placeholder={placeholder} className={styles.input} style={{ maxWidth: `${width}px`, maxHeight: `${height}px`, fontSize: `${fontsize}px`, ...style }} />
+        <div className={styles.container}>
+            <input
+                placeholder={placeholder}
+                className={styles.input}
+                style={{ maxWidth: `${width}px`, height: `${height}px`, fontSize: `${fontsize}px`, ...style }}
+                {...password ? { type: currentType } : { type: currentType }}
+            />
+            {password === true && <img
+                alt="toggleVissible"
+                src={toggleVissible}
+                className={styles.passwordIcon}
+                onClick={() => { currentType === "text" ? setCurrentType("password") : setCurrentType("text") }} />}
+        </div>
     )
 }
