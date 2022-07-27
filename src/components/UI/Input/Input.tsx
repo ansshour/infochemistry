@@ -9,9 +9,12 @@ type Props = {
     fontsize?: number;
     style?: React.CSSProperties;
     password?: boolean;
+    value?: string;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
+    name?: string;
 }
 
-export const Input: React.FC<Props> = ({ placeholder, width, height, fontsize, style, password }) => {
+export const Input: React.FC<Props> = ({ placeholder, width, height, fontsize, style, password, value, onChange, name }) => {
 
     const [currentType, setCurrentType] = useState(password ? "password" : "text");
 
@@ -22,6 +25,9 @@ export const Input: React.FC<Props> = ({ placeholder, width, height, fontsize, s
                 className={styles.input}
                 style={{ maxWidth: `${width}px`, height: `${height}px`, fontSize: `${fontsize}px`, ...style }}
                 {...password ? { type: currentType } : { type: currentType }}
+                {...value ? { value: value } : {}}
+                {...onChange ? { onChange: onChange } : {}}
+                name={name}
             />
             {password === true && <img
                 alt="toggleVissible"

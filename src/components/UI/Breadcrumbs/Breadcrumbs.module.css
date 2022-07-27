@@ -45,6 +45,12 @@
     flex-wrap: wrap;
 }
 
-.arrow:last-child {
+.Breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Breadcrumb:last-child img {
     display: none;
 }

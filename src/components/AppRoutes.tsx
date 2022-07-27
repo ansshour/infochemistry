@@ -3,6 +3,7 @@ import { About } from "./About/About";
 import { Aspirantura } from "./Aspirantura/Aspirantura";
 import { Contacts } from "./Contacts/Contacts";
 import { Equipment } from "./Equipment/Equipment";
+import { LaboratoryWork } from "./LaboratoryWork/LaboratoryWork";
 import { Main } from "./Main/Main";
 import { MainDirections } from "./MainDirections/MainDirections";
 import { Master } from "./Master/Master";
@@ -45,6 +46,7 @@ export const AppRoutes = () => {
             <Route path="/register/confirm" element={<Confirm />} />
             <Route path="/restore" element={<Restore />} />
             <Route path="/restore/change_password" element={<ChangePassword />} />
+            <Route path="/online_lab" element={<LaboratoryWork />} />
         </Routes>
     )
 }

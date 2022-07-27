@@ -1,5 +1,4 @@
 .container {
-    width: 117px;
     height: 33px;
     display: flex;
     align-items: center;
@@ -9,7 +8,8 @@
     border: 1px solid black;
     color: black;
     cursor: pointer;
-    width: 100%;
+    /* width: 100%; */
+    padding: 0 20px;
 }
 
 .container:hover {

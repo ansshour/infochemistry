@@ -8,7 +8,8 @@
 }
 
 .accordion p {
-    transform: translateY(1px);
+    transform: translateY(0px);
+    order: 0;
 }
 
 .arrow {
