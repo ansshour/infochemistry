@@ -100,28 +100,30 @@ export const LaboratoryWork = () => {
                     </Accordion>
 
                 </div>
-                <div className={styles.main}>
-                    <div className={styles.lab}></div>
-                    <div className={styles.quiz}>
-                        <p className={styles.quiz__title}>Вопросы к работе</p>
-                        <div className={styles.questions}>
-                            <Question
-                                number={1}
-                                title="2. При возникновении в кабинете во время занятий чрезвычайных ситуаций"
-                                manyAnswer={true}
-                                answers={["покинуть здание по плану эвакуации;", "не допускать паники и подчиняться только указаниям учителя;", "погуглить, что делать в данной ситуации;",]}
-                            />
-                            <Question
-                                number={2}
-                                title="Вредными и опасными производственными факторами при проведении лабораторных и практических работ могут быть:"
-                                manyAnswer={false}
-                                answers={["Порезы рук при небрежном обращении с лабораторной посудой;", "Химические ожоги при работе с химреактивами;", "Испорченные реагенты;", "Отравления токсичными веществами;"]}
-                            />
+                <div className={styles.main__wrapper}>
+                    <div className={styles.main}>
+                        <div className={styles.lab}></div>
+                        <div className={styles.quiz}>
+                            <p className={styles.quiz__title}>Вопросы к работе</p>
+                            <div className={styles.questions}>
+                                <Question
+                                    number={1}
+                                    title="2. При возникновении в кабинете во время занятий чрезвычайных ситуаций"
+                                    manyAnswer={true}
+                                    answers={["покинуть здание по плану эвакуации;", "не допускать паники и подчиняться только указаниям учителя;", "погуглить, что делать в данной ситуации;",]}
+                                />
+                                <Question
+                                    number={2}
+                                    title="Вредными и опасными производственными факторами при проведении лабораторных и практических работ могут быть:"
+                                    manyAnswer={false}
+                                    answers={["Порезы рук при небрежном обращении с лабораторной посудой;", "Химические ожоги при работе с химреактивами;", "Испорченные реагенты;", "Отравления токсичными веществами;"]}
+                                />
+                            </div>
+
+                            <Button style={{ margin: "30px auto", marginBottom: "0", padding: "7px 35px" }}>Отправить</Button>
+
+
                         </div>
-
-                        <Button style={{ margin: "30px auto", marginBottom: "0", padding: "7px 35px" }}>Отправить</Button>
-
-
                     </div>
                 </div>
                 <div className={styles.right}>

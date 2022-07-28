@@ -20,7 +20,7 @@ export const Question: React.FC<Props> = ({ title, number, manyAnswer, answers }
             <ul className={styles.answersList}>
                 {answers.map(item => (
                     <li>
-                        {manyAnswer ? <Checkbox /> : <Radio />}
+                        {manyAnswer ? <Checkbox /> : <Radio name="question1" />}
                         {item}
                     </li>
                 ))}

@@ -1,0 +1,137 @@
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0px 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: none;
+    }
+}
+
+
+/*container*/
+
+
+.wrapper {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 250px 3fr 250px;
+    margin-bottom: 123px;
+    gap: 50px;
+}
+
+.labsList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.labsList:first-child {
+    margin-top: 15px;
+}
+
+.labsList li {
+    cursor: pointer;
+    display: flex;
+    gap: 11px;
+    align-items: center;
+}
+
+.title {
+    font-size: 24px;
+    padding-bottom: 8px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background-color: #C8F1FD;
+    top: 100%;
+    left: 0;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.main {
+    border: 1px solid black;
+    padding: 30px;
+    background-color: white;
+}
+
+.title__main {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
+}
+
+.tableHead {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    justify-items: center;
+    background-color: white;
+}
+
+.table {
+    background-color: white;
+}
+
+.headTable {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+
+@media (max-width: 1480px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .wrapper__main {
+        overflow-x: scroll;
+    }
+
+    .main {
+        min-width: 1170px;
+    }
+}

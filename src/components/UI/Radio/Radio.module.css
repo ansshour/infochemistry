@@ -4,7 +4,6 @@
     border-radius: 50%;
     border: 1px solid #39289D;
     cursor: pointer;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +18,6 @@
     transition: 0.1s;
 }
 
-
-.internalRadio.active {
+.radioReal:checked+.internalRadio {
     opacity: 1;
 }

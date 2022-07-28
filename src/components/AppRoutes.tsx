@@ -18,6 +18,7 @@ import { Personalities } from "./Personalities/Personalities";
 import { Publications } from "./Publications/Publications";
 import { Schedule } from "./Schedule/Schedule";
 import { ScienceGroup } from "./ScienceGroup/ScienceGroup";
+import { TeacherPersonalAccount } from "./TeacherPersonalAccount/TeacherPersonalAccount";
 import { Vacancy } from "./Vacancy/Vacancy";
 import { VideoDetail } from "./VideoLectures/VideoDetail/VideoDetail";
 import { VideoLectures } from "./VideoLectures/VideoLectures";
@@ -47,6 +48,7 @@ export const AppRoutes = () => {
             <Route path="/restore" element={<Restore />} />
             <Route path="/restore/change_password" element={<ChangePassword />} />
             <Route path="/online_lab" element={<LaboratoryWork />} />
+            <Route path="/teacher_personal_account" element={<TeacherPersonalAccount />} />
         </Routes>
     )
 }

@@ -2,18 +2,22 @@ import { useState } from "react"
 import styles from "./Radio.module.css"
 
 
+type Props = {
+    name: string;
+}
 
-export const Radio = () => {
 
+export const Radio: React.FC<Props> = ({ name }) => {
 
     const [active, setActive] = useState(false)
 
     return (
-        <div className={styles.radio}
-            onClick={() => { setActive(!active) }}>
-            <div className={active ? [styles.internalRadio, styles.active].join(" ") : styles.internalRadio}>
-
-            </div>
-        </div>
+        <label>
+            <div className={styles.radio}>
+                <input type="radio" hidden className={styles.radioReal} name={name} />
+                <div className={styles.internalRadio}>
+                </div>
+            </div >
+        </label>
     )
 }

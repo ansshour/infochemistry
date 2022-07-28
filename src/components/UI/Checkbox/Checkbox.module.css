@@ -13,10 +13,6 @@
     transition: 0.1s;
 }
 
-.checkbox.active {
+.realCheckbox:checked+.checkbox {
     background-color: #39289D;
-}
-
-.img {
-    transition: 0.1s;
 }
