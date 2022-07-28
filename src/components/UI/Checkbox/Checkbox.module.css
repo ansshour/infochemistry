@@ -1,0 +1,22 @@
+.checkbox {
+    display: inline;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: 0.1s;
+}
+
+.checkbox.active {
+    background-color: #39289D;
+}
+
+.img {
+    transition: 0.1s;
+}

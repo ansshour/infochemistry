@@ -51,9 +51,9 @@ export const Slider: React.FC<Props> = ({ data }) => {
             <div className={styles.prev} onClick={prevHundler}></div>
             <div className={styles.slider}>
                 <div className={styles.activeElement} style={{ transform: `translateX(${elementOffset}%)` }}>
-                    {data.map((elem: Data) => {
+                    {data.map((elem: Data, i: number) => {
                         return (
-                            <div className={styles.slide}>
+                            <div className={styles.slide} key={i}>
                                 <div className={styles.image} style={{ backgroundImage: `url(${elem.image})` }}></div>
                                 <div className={styles.text}>
                                     {elem.text.map((text: string) => <p key={text}>{text}</p>)}

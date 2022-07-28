@@ -14,7 +14,9 @@ export const Header = () => {
         <>
             <div className={styles.container__wrapper}>
                 <div className={styles.container}>
-                    <Link to="/"><img src={logo} height={33} className={styles.logo} /></Link>
+                    <Link to="/">
+                        <img src={logo} height={33} className={styles.logo} alt="logo" />
+                    </Link>
                     {/* desktop menu */}
                     <nav className={styles.nav}>
                         <ul>
@@ -75,7 +77,7 @@ export const Header = () => {
                             <span>/</span>
                             <span>EN</span>
                         </div>
-                        <Button>Войти</Button>
+                        <Button style={{ padding: "0 20px" }}>Войти</Button>
                     </div>
                 </nav>
             </div>
