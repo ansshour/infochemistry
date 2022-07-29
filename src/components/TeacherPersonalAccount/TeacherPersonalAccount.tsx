@@ -44,6 +44,20 @@ export const TeacherPersonalAccount = () => {
         { item: "Анализ смеси катионов III группы", id: 15 }
     ]
 
+    const students = [
+        { name: "Абдуллаев Артур Азизович", group: "O3144", isTrueQuestion: true, reportLink: "#" },
+        { name: "Абдуллаев Артур Азизович", group: "O3144", isTrueQuestion: true, reportLink: "#" },
+        { name: "Абдуллаев Артур Азизович", group: "O3144", isTrueQuestion: true, reportLink: "#" },
+        { name: "Абдуллаев Артур Азизович", group: "O3144", isTrueQuestion: true, reportLink: "#" },
+    ]
+
+    const labsList = [
+        { name: "Аналитическая химия", list: list1 },
+        { name: "Органическая химия", list: list2 },
+        { name: "Супрамолекулярная химия", list: list3 },
+        { name: "Общая химия", list: list4 },
+    ]
+
     const getList = (items: List[]) => {
         return (
             <ul className={styles.labsList}>
@@ -66,18 +80,8 @@ export const TeacherPersonalAccount = () => {
             <div className={styles.wrapper}>
                 <div className={styles.left}>
                     <p className={styles.title}>Онлайн-лаборатория</p>
-                    <Accordion name="Аналитическая химия" type={2} style={{ fontSize: "14px" }}>
-                        {getList(list1)}
-                    </Accordion>
-                    <Accordion name="Органическая химия" type={2} style={{ fontSize: "14px" }}>
-                        {getList(list2)}
-                    </Accordion>
-                    <Accordion name="Супрамолекулярная химия" type={2} style={{ fontSize: "14px" }}>
-                        {getList(list3)}
-                    </Accordion>
-                    <Accordion name="Общая химия" type={2} style={{ fontSize: "14px" }}>
-                        {getList(list4)}
-                    </Accordion>
+
+                    {labsList.map(({ name, list }) => <Accordion name={name}>{getList(list)}</Accordion>)}
 
                     <Button style={{ padding: "7px 35px", marginTop: "40px", width: "200px" }}>Добавить ЛР</Button>
                 </div>
@@ -98,10 +102,11 @@ export const TeacherPersonalAccount = () => {
                                 <p className={styles.headTable}>Скачать отчет</p>
                                 <p className={styles.headTable}>Отметка о сдаче</p>
                             </div>
-                            <StudentCard name="Абдуллаев Артур Азизович" group="O3144" isTrueQuestions={true} reportLink={"#"} />
-                            <StudentCard name="Абдуллаев Артур Азизович" group="O3144" isTrueQuestions={true} reportLink={"#"} />
-                            <StudentCard name="Абдуллаев Артур Азизович" group="O3144" isTrueQuestions={true} reportLink={"#"} />
-                            <StudentCard name="Абдуллаев Артур Азизович" group="O3144" isTrueQuestions={true} reportLink={"#"} />
+                            {students.map(({ name, group, isTrueQuestion, reportLink }) => <StudentCard
+                                name={name}
+                                group={group}
+                                isTrueQuestions={isTrueQuestion}
+                                reportLink={reportLink} />)}
                         </div>
 
                     </div>

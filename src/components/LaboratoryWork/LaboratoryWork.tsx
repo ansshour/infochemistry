@@ -48,6 +48,18 @@ export const LaboratoryWork = () => {
         { item: "Анализ смеси катионов III группы", id: 15 }
     ]
 
+    const labsList = [
+        { name: "Аналитическая химия", list: list1 },
+        { name: "Органическая химия", list: list2 },
+        { name: "Супрамолекулярная химия", list: list3 },
+        { name: "Общая химия", list: list4 },
+    ]
+
+    const questions = [
+        { number: 1, title: "При возникновении в кабинете во время занятий чрезвычайных ситуаций", manyAnswer: true, answers: ["покинуть здание по плану эвакуации;", "не допускать паники и подчиняться только указаниям учителя;", "погуглить, что делать в данной ситуации;",] },
+        { number: 2, title: "Вредными и опасными производственными факторами при проведении лабораторных и практических работ могут быть:", manyAnswer: false, answers: ["Порезы рук при небрежном обращении с лабораторной посудой;", "Химические ожоги при работе с химреактивами;", "Испорченные реагенты;", "Отравления токсичными веществами;"] }
+    ]
+
     const getList = (items: List[]) => {
         return (
             <ul className={styles.labsList}>
@@ -86,18 +98,7 @@ export const LaboratoryWork = () => {
             <div className={styles.wrapper}>
                 <div className={styles.left}>
                     <p className={styles.title}>Онлайн-лаборатория</p>
-                    <Accordion name="Аналитическая химия" type={2} style={{ fontSize: "14px" }}>
-                        {getList(list1)}
-                    </Accordion>
-                    <Accordion name="Органическая химия" type={2} style={{ fontSize: "14px" }}>
-                        {getList(list2)}
-                    </Accordion>
-                    <Accordion name="Супрамолекулярная химия" type={2} style={{ fontSize: "14px" }}>
-                        {getList(list3)}
-                    </Accordion>
-                    <Accordion name="Общая химия" type={2} style={{ fontSize: "14px" }}>
-                        {getList(list4)}
-                    </Accordion>
+                    {labsList.map(({ name, list }) => <Accordion name={name}>{getList(list)}</Accordion>)}
 
                 </div>
                 <div className={styles.main__wrapper}>
@@ -106,18 +107,7 @@ export const LaboratoryWork = () => {
                         <div className={styles.quiz}>
                             <p className={styles.quiz__title}>Вопросы к работе</p>
                             <div className={styles.questions}>
-                                <Question
-                                    number={1}
-                                    title="2. При возникновении в кабинете во время занятий чрезвычайных ситуаций"
-                                    manyAnswer={true}
-                                    answers={["покинуть здание по плану эвакуации;", "не допускать паники и подчиняться только указаниям учителя;", "погуглить, что делать в данной ситуации;",]}
-                                />
-                                <Question
-                                    number={2}
-                                    title="Вредными и опасными производственными факторами при проведении лабораторных и практических работ могут быть:"
-                                    manyAnswer={false}
-                                    answers={["Порезы рук при небрежном обращении с лабораторной посудой;", "Химические ожоги при работе с химреактивами;", "Испорченные реагенты;", "Отравления токсичными веществами;"]}
-                                />
+                                {questions.map(({ number, title, manyAnswer, answers }) => <Question number={number} title={title} manyAnswer={manyAnswer} answers={answers} />)}
                             </div>
 
                             <Button style={{ margin: "30px auto", marginBottom: "0", padding: "7px 35px" }}>Отправить</Button>
