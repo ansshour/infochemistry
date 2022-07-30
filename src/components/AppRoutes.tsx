@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { About } from "./About/About";
 import { Aspirantura } from "./Aspirantura/Aspirantura";
 import { Contacts } from "./Contacts/Contacts";
+import { CreateLab } from "./CreateLab/CreateLab";
 import { Equipment } from "./Equipment/Equipment";
 import { LaboratoryWork } from "./LaboratoryWork/LaboratoryWork";
 import { Main } from "./Main/Main";
@@ -49,6 +50,7 @@ export const AppRoutes = () => {
             <Route path="/restore/change_password" element={<ChangePassword />} />
             <Route path="/online_lab" element={<LaboratoryWork />} />
             <Route path="/teacher_personal_account" element={<TeacherPersonalAccount />} />
+            <Route path="/createlab" element={<CreateLab />} />
         </Routes>
     )
 }

@@ -1,0 +1,28 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 38px;
+    gap: 15px;
+}
+
+.controller {
+    display: grid;
+    gap: 13px;
+    padding: 19px 12px;
+    border: 1px dotted black;
+    border-radius: 20px;
+    justify-items: center;
+    align-items: center;
+    max-height: 135px;
+}
+
+.controller img {
+    display: block;
+    transform: translateX(-1px);
+    cursor: pointer;
+}
+
+.questionList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
