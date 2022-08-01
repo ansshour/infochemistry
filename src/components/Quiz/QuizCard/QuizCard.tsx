@@ -1,78 +1,122 @@
 import React, { useContext, useState } from "react";
 import { QuizContext } from "../../CreateLab/CreateLab";
-import { Checkbox } from "../../UI/Checkbox/Checkbox"
+import { Checkbox } from "../../UI/Checkbox/Checkbox";
 import { Radio } from "../../UI/Radio/Radio";
 import styles from "./QuizCard.module.css"
 
-type Props = {
-    question: string;
-    multyple: boolean;
-    answers: string[];
-    id: number;
+type Answer = {
+    answer: string;
+    isCorrect: boolean;
 }
 
-export const QuizCard: React.FC<Props> = ({ question, multyple, answers, id }) => {
+type Props = {
+    id: number;
+    question: string;
+    multyple: boolean;
+    answers: Answer[];
+}
 
-    const { questionList, setQuestionList } = useContext(QuizContext)
 
-    const changeName = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        let newList = questionList.map((item: Props) => {
-            if (item.id === Number(e.target.dataset.id)) {
-                item.question = e.target.value;
-                return item
-            } else {
-                return item
-            }
+type Question = {
+    id: number;
+    question: string;
+    multyple: boolean;
+    answers: Answer[];
+}
+
+export const QuizCard: React.FC<Props> = ({ id, question, multyple, answers }) => {
+
+    const { questionList, setQuestionList, activeQuestion, setActiveQuestion } = useContext(QuizContext);
+
+    const changeQuestion = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+
+        setQuestionList((questionList: Question[]) => {
+            return (
+                questionList.map((question: Question) => {
+                    if (question.id === id) {
+                        question.question = e.target.value
+                    }
+                    return question
+                })
+            )
         })
-        setQuestionList(newList)
+
+    }
+
+    const changeMultiple = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setQuestionList((questionList: Question[]) => {
+            return (
+                questionList.map((question: Question) => {
+                    if (question.id === id) {
+                        question.multyple = !question.multyple;
+                    }
+                    return question
+                })
+            )
+        })
     }
 
     const changeAnswer = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const answerId = Number(e.target.dataset.aid);
-        let newList = questionList.map((item: Props) => {
-            if (item.id === Number(e.target.dataset.id)) {
-                item.answers[answerId] = e.target.value;
-                return item
-            } else {
-                return item
-            }
+        setQuestionList((questionList: Question[]) => {
+            return (
+                questionList.map((question: Question) => {
+                    if (question.id === id) {
+                        question.answers.map((answer: Answer, i: number) => {
+                            console.log(String(id) + String(i), " /// ", Number(e.target.dataset.id))
+                            if (String(id) + String(i) === e.target.dataset.id) {
+                                answer.answer = e.target.value;
+                                return answer
+                            }
+                        })
+                    }
+                    return question
+                })
+            )
         })
-        setQuestionList(newList)
+    }
+
+    const addAnswer = (e: React.MouseEvent<HTMLSpanElement>) => {
+        setQuestionList((questionList: Question[]) => {
+            return (
+                questionList.map((question: Question) => {
+                    if (question.id === id) {
+                        question.answers = [...question.answers, { answer: "", isCorrect: false }]
+                    }
+                    return question
+                })
+            )
+        })
     }
 
 
-    return (
-        <div className={styles.card}>
-            <div className={styles.top}>
-                <textarea
-                    className={styles.question}
-                    placeholder="Введите вопрос"
-                    value={question}
-                    onChange={changeName}
-                    data-id={id}
-                />
 
-                <label className={styles.isMiltiply}>
-                    <Checkbox /> Несколько ответов?
+    return (
+        <div className={styles.container}
+            style={activeQuestion === id ? { boxShadow: " 0px 0px 6px 4px rgba(169, 236, 255, 0.6)" } : {}}
+            onClick={() => { setActiveQuestion(id) }}>
+            <div className={styles.top}>
+                <textarea value={question} onChange={changeQuestion} className={styles.question} placeholder="Введите вопрос" />
+                <label className={styles.isMultiply}>
+                    <Checkbox
+                        checked={multyple} setChecked={changeMultiple} />
+                    <p>Несколько ответов</p>
                 </label>
             </div>
-            <div className={styles.answers}>
-                {answers.map((text, i) => {
-                    return (
-                        <div className={styles.answer}>
-                            {multyple ? <Checkbox /> : <Radio name="answer" />}
-                            <input
-                                className={styles.answer_input}
-                                placeholder="Введите вариант"
-                                value={text}
-                                onChange={changeAnswer}
-                                data-aId={i}
-                                data-id={id}
-                            />
-                        </div>
-                    )
-                })}
+            <div className={styles.answers} style={{ marginTop: "20px" }}>
+                {answers.map(({ answer, isCorrect }: Answer, i: number) => (
+                    <div className={styles.answer}>
+                        {multyple ? <Checkbox /> : <Radio name="question" />}
+                        <input
+                            value={answer}
+                            onChange={changeAnswer}
+                            data-id={id + i.toString()}
+                            placeholder="Добавить вариант" />
+                    </div>
+                ))}
+                <div
+                    className={styles.addAnswer}
+                    onClick={addAnswer}>Добавить вариант ответа</div>
             </div>
-        </div>
+        </div >
     )
 }
