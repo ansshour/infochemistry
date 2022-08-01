@@ -4,7 +4,7 @@ import { Input } from "../UI/Input/Input"
 import { Select } from "../UI/Select/Select"
 import styles from "./CreateLab.module.css"
 import { Editor } from "@tinymce/tinymce-react"
-import { createContext, useRef, useState } from "react"
+import { createContext, useEffect, useRef, useState } from "react"
 import { Quiz } from "../Quiz/Quiz"
 
 const info = [
@@ -12,28 +12,35 @@ const info = [
     { name: "Создание новой ЛР", link: "" },
 ]
 
+type Answer = {
+    answer: string;
+    isCorrect: boolean;
+}
+
 type Questions = {
+    id: number;
     question: string;
     multyple: boolean;
-    answers: string[];
+    answers: Answer[];
 }
 
 export const QuizContext = createContext<any>(null)
 
 export const CreateLab = () => {
-    const questions = [
-        { question: "Вредными и опасными производственными факторами при проведении лабораторных и практических работ могут быть:", multyple: true, answers: ["Порезы рук при небрежном обращении с лабораторной посудой;"], id: 0 },
-        {
-            question: "Вредными и опасными производственными факторами при проведении лабораторных и практических работ могут быть:", multyple: false,
-            answers: ["2Порезы рук при небрежном обращении с лабораторной посудой;", "3Порезы рук при небрежном обращении с лабораторной посудой;"], id: 1
-        },
-    ]
     const editorRef = useRef<any>();
     const [groupList, setGroupList] = useState<string[]>([])
-    const [questionList, setQuestionList] = useState<Questions[]>(questions)
+    const [questionList, setQuestionList] = useState<Questions[]>([
+        { id: 0, question: "", multyple: false, answers: [{ answer: "", isCorrect: false },] }
+    ])
+    const [activeQuestion, setActiveQuestion] = useState<number | null>(null);
+
+    useEffect(() => {
+        console.log(questionList)
+    }, [questionList])
+
     return (
         <>
-            <QuizContext.Provider value={{ questionList: questionList, setQuestionList: setQuestionList }}>
+            <QuizContext.Provider value={{ questionList: questionList, setQuestionList: setQuestionList, activeQuestion: activeQuestion, setActiveQuestion: setActiveQuestion }}>
                 <Breadcrumbs info={info} />
                 <div className={styles.container}>
                     <div className={styles.wrapper}>
