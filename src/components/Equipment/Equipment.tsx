@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Breadcrumbs } from "../UI/Breadcrumbs/Breadcrumbs"
 import { EquipmentCard } from "../UI/EquipmentCard/EquipmentCard"
+import { Loader } from "../UI/Loader/Loader"
 import { Modal } from "../UI/Modal/Modal"
 import styles from "./Equipment.module.css"
 
@@ -18,29 +19,50 @@ const equipmentData = [
 
 export const Equipment = () => {
 
+    const lang = localStorage.getItem("i18nextLng");
+
     const info = [
         { name: "Главная страница", link: "/" },
         { name: "Исследования", link: "" },
         { name: "Оборудование", link: "/equipment" },
     ]
 
+    const [data, setData] = useState<any>([])
+
+    const getEquipment = async () => {
+        const data = await fetch(`http://78.140.243.10/api/equipment/?lang=${lang === "ru" ? "ru" : "eng"}`)
+        const response = await data.json();
+        setData(response)
+    }
+
+    useEffect(() => {
+        getEquipment()
+    }, [])
+
     return (
         <>
-            <Breadcrumbs info={info} />
-            <div className={styles.container}>
-                <div className={styles.title__wrapper}>
-                    <h1 className={styles.title}>
-                        Оборудование
-                    </h1>
-                </div>
-                <div className={styles.equipmentCards}>
-                    {equipmentData.map(({ title, description, image, fullDesc }, i) => {
-                        return (
-                            <EquipmentCard key={title} title={title} description={description} image={image} fullDesc={fullDesc} />
-                        )
-                    })}
-                </div>
-            </div>
+            {data.length ? (
+                <>
+                    <Breadcrumbs info={info} />
+                    <div className={styles.container}>
+                        <div className={styles.title__wrapper}>
+                            <h1 className={styles.title}>
+                                Оборудование
+                            </h1>
+                        </div>
+                        <div className={styles.equipmentCards}>
+                            {data.map(({ id, name, name_eng, description, description_eng, image }: any) => {
+                                return (
+                                    <EquipmentCard key={id} title={lang === "ru" ? name : name_eng} description={lang === "ru" ? description.split(" ").filter((item: string, i: number) => i < 14 ? item : "").join(" ") + "..." : description_eng.split(" ").filter((item: string, i: number) => i < 14 ? item : "").join(" ") + "..."} image={image} fullDesc={lang === "ru" ? description : description_eng} />
+                                )
+                            })}
+                        </div>
+                    </div>
+                </>
+            ) : (
+                <Loader />
+            )}
+
         </>
     )
 }

@@ -7,7 +7,7 @@ type Props = {
     image: string;
     title: string;
     description: string;
-    fullDesc: string[];
+    fullDesc?: string;
 }
 
 export const EquipmentCard: React.FC<Props> = ({ image, title, description, fullDesc }) => {
@@ -38,7 +38,7 @@ export const EquipmentCard: React.FC<Props> = ({ image, title, description, full
                     </div>
                     <p className={styles.desc__name}>Описание</p>
                     <div className={styles.descBlock}>
-                        {fullDesc.map((fullDesc) => <p key={description} className={styles.modal__desc}>{fullDesc}</p>)}
+                        <p className={styles.modal__desc}>{fullDesc}</p>
                     </div>
                 </div>
             </Modal>

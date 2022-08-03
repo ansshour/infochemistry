@@ -1,0 +1,22 @@
+{
+    "personalities": {
+        "breadcrumbs": {
+            "main": "Home Page",
+            "about": "About us",
+            "personalities": "Personalities"
+        },
+        "title": "Personalities",
+        "nav": {
+            "group_leaders": "Group leaders",
+            "postdocs": "ITMO Postdocs and Fellows",
+            "aspirants": "Postgraduate",
+            "masters": "Masters",
+            "backelors": "Bachelors",
+            "schoolstudents": "School students",
+            "alums": "Alumni",
+            "staff": "Staff",
+            "practics": "Trainee",
+            "admins": "Administration"
+        }
+    }
+}

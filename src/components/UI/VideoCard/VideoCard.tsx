@@ -6,11 +6,10 @@ type Props = {
     name: string;
     authorName: string;
     date: string;
-    time: string;
     id?: number;
 }
 
-export const VideoCard: React.FC<Props> = ({ image, name, authorName, date, time, id }) => {
+export const VideoCard: React.FC<Props> = ({ image, name, authorName, date, id }) => {
 
     const toTimeAgoFormat = (date: string) => {
         let difference = 0;
@@ -86,7 +85,6 @@ export const VideoCard: React.FC<Props> = ({ image, name, authorName, date, time
         <div className={styles.container}>
             <Link to={`/video_lectures/${id}`}>
                 <div className={styles.video} style={{ backgroundImage: `url(${image})` }}>
-                    <span className={styles.timer}>{time}</span>
                 </div>
             </Link>
             <Link to={`/video_lectures/${id}`}> <p className={styles.name}>{name}</p></Link>

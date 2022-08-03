@@ -5,6 +5,8 @@ import { PersonalitiesGroupLeaders } from "../PersonalitiesData/PersonalitiesDat
 import { PersonalitiesPostdocs } from "../PersonalitiesData/PersonalitiesData"
 import { PersonalitiesAspirants } from "../PersonalitiesData/PersonalitiesData"
 import { PersonalitiesMaster } from "../PersonalitiesData/PersonalitiesData"
+import { useTranslation } from "react-i18next"
+import "../../../utils/i18next"
 
 type Props = {
     active: any;
@@ -13,55 +15,64 @@ type Props = {
 
 export const PersonalitiesNav: React.FC<Props> = ({ active, setActive }) => {
 
-
+    const { t } = useTranslation()
 
     const { setPersonalitiesData, setPersonalitiesName } = useContext(PersonalitiesContext);
 
+    const getPersonalitiesInfo = (group: string) => {
+        fetch(`http://78.140.243.10/api/people/?role=${group}`, {
+        })
+            .then(data => data.json())
+            .then(response => setPersonalitiesData(response))
+            .catch(err => console.log("Personalities error"))
+    }
+
     useEffect(() => {
         if (active === 0) {
-            setPersonalitiesData(PersonalitiesGroupLeaders)
+            getPersonalitiesInfo("group_leader")
         }
         if (active === 1) {
-            setPersonalitiesData(PersonalitiesPostdocs)
+            getPersonalitiesInfo("postdoctoral")
         }
         if (active === 2) {
-            setPersonalitiesData(PersonalitiesAspirants)
+            getPersonalitiesInfo("doctoral_student")
         }
         if (active === 3) {
-            setPersonalitiesData(PersonalitiesMaster)
+            getPersonalitiesInfo("masters_student")
         }
         if (active === 4) {
-            setPersonalitiesData(PersonalitiesGroupLeaders)
+            getPersonalitiesInfo("bachelor_student")
         }
         if (active === 5) {
-            setPersonalitiesData(PersonalitiesAspirants)
+            getPersonalitiesInfo("school_student")
         }
         if (active === 6) {
-            setPersonalitiesData(PersonalitiesPostdocs)
+            getPersonalitiesInfo("alumni")
         }
         if (active === 7) {
-            setPersonalitiesData(PersonalitiesGroupLeaders)
+            getPersonalitiesInfo("staff")
         }
         if (active === 8) {
-            setPersonalitiesData(PersonalitiesPostdocs)
+            getPersonalitiesInfo("practice_student")
         }
         if (active === 9) {
-            setPersonalitiesData(PersonalitiesGroupLeaders)
+            getPersonalitiesInfo("administration")
         }
 
     }, [active])
 
+
     const personalitiesNav = [
-        { name: "Групп-лидеры", icon: "./images/personalities/icon/1.svg" },
-        { name: "Постдоки и стипендиаты ИТМО", icon: "./images/personalities/icon/2.svg" },
-        { name: "Аспиранты", icon: "./images/personalities/icon/3.svg" },
-        { name: "Магистранты", icon: "./images/personalities/icon/4.svg" },
-        { name: "Бакалавры", icon: "./images/personalities/icon/5.svg" },
-        { name: "Школьники", icon: "./images/personalities/icon/6.png" },
-        { name: "Алюмни", icon: "./images/personalities/icon/7.svg" },
-        { name: "Персонал", icon: "./images/personalities/icon/8.svg" },
-        { name: "Практиканты", icon: "./images/personalities/icon/9.svg" },
-        { name: "Администрация", icon: "./images/personalities/icon/10.svg" },
+        { name: t("personalities.nav.group_leaders"), icon: "./images/personalities/icon/1.svg" },
+        { name: t("personalities.nav.postdocs"), icon: "./images/personalities/icon/2.svg" },
+        { name: t("personalities.nav.aspirants"), icon: "./images/personalities/icon/3.svg" },
+        { name: t("personalities.nav.masters"), icon: "./images/personalities/icon/4.svg" },
+        { name: t("personalities.nav.backelors"), icon: "./images/personalities/icon/5.svg" },
+        { name: t("personalities.nav.schoolstudents"), icon: "./images/personalities/icon/6.png" },
+        { name: t("personalities.nav.alums"), icon: "./images/personalities/icon/7.svg" },
+        { name: t("personalities.nav.staff"), icon: "./images/personalities/icon/8.svg" },
+        { name: t("personalities.nav.practics"), icon: "./images/personalities/icon/9.svg" },
+        { name: t("personalities.nav.admins"), icon: "./images/personalities/icon/10.svg" },
     ]
 
     return (

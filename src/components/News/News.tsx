@@ -1,10 +1,20 @@
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import { Breadcrumbs } from "../UI/Breadcrumbs/Breadcrumbs"
 import { Button } from "../UI/Button/Button"
 import { CategoryButton } from "../UI/CategoryButton/CategoryButton"
 import { NewsCard } from "../UI/NewsCard/NewsCard"
 import { SearchInput } from "../UI/SearchInput/SearchInput"
 import styles from "./News.module.css"
+import i18n from "../../utils/i18next"
+
+
+type NewsOptions = {
+    page?: number;
+    page_size?: number;
+    search?: string;
+    sections?: string;
+}
 
 export const News = () => {
 
@@ -14,19 +24,49 @@ export const News = () => {
     ]
 
 
-    const data = [
-        { image: "./images/news/1.png", text: "Еда для Арктики: как специальные консервы, плавленые сыры и зефир помогут восполнить необходимые человеку витамины и минералы", date: "22 марта, 2022", category: "Другое" },
-        { image: "./images/news/2.png", text: "Бакалавриат “Инфохимия”", date: "28 апреля, 2022", category: "Мероприятие" },
-        { image: "./images/news/3.png", text: "Вебинар «Вдохновленные природой: биомиметические материалы для медицины» с групп-лидером научно-образовательного центра инфохимии", date: "24 апреля, 2022", category: "Мероприятие" },
-        { image: "./images/news/4.png", text: "5 школьников выиграли СТАЖИРОВКИ в Центре инфохимии по итогам хакатона «Горизонты науки», который прошел в эти выходные в Кванториуме Санкт-Петербурга", date: "19 апреля, 2022", category: "Мероприятие" },
-        { image: "./images/news/5.png", text: "Объявлены победители конкурса интердисциплинарных проектов IChem Prize, который проводят Центр инфохимии Университета ИТМО и Академия талантов Санкт-Петербурга.", date: "22 марта, 2022", category: "Мероприятие" },
-        { image: "./images/news/6.png", text: "Бакалавриат “Инфохимия”", date: "28 апреля, 2022", category: "Мероприятие" },
-        { image: "./images/news/7.png", text: "Вебинар «Вдохновленные природой: биомиметические материалы для медицины» с групп-лидером научно-образовательного центра инфохимии", date: "24 апреля, 2022", category: "Мероприятие" },
-        { image: "./images/news/8.png", text: "Еда для Арктики: как специальные консервы, плавленые сыры и зефир помогут восполнить необходимые человеку витамины и минералы", date: "22 марта, 2022", category: "Другое" },
-    ]
+    const [data, setData] = useState<any>([])
+    const [search, setSearch] = useState("");
 
 
-    const [isActiveBtns, setIsActiveBtns] = useState({ event: true, video: false, smi: false, other: true, external: false })
+
+    const getNews = async ({ page, page_size, search, sections }: NewsOptions) => {
+        const lang = localStorage.getItem("i18nextLng");
+        let link = `http://78.140.243.10/api/news/?lang=${lang}`;
+        if (page) {
+            link = `${link}&page=${page}`
+        }
+        if (page_size) {
+            link = `${link}&page_size=${page_size}`
+        }
+        if (search) {
+            link = `${link}&search=${search}`
+        }
+        if (sections) {
+            link = `${link}&sections=${sections}`
+        }
+        const data = await fetch(link)
+        const { results } = await data.json();
+        const filtredResults = results.map(({ headline, headline_eng, id, preview, publication_date, section }: any) => {
+            if (lang === "ru") {
+                return ({ headline: headline, id: id, preview: preview, publication_date: publication_date, section: section })
+            }
+            if (lang === "en") {
+                return ({ headline: headline_eng, id: id, preview: preview, publication_date: publication_date, section: section })
+            }
+        })
+        setData(filtredResults)
+    }
+
+
+
+
+    useEffect(() => {
+        getNews({})
+    }, [])
+
+
+
+    const [isActiveBtns, setIsActiveBtns] = useState({ event: false, video: false, smi: false, other: false, external: false })
 
     const eventBtnClickHandler = () => {
         setIsActiveBtns({ ...isActiveBtns, event: !isActiveBtns.event })
@@ -46,6 +86,30 @@ export const News = () => {
         setIsActiveBtns({ ...isActiveBtns, external: !isActiveBtns.external })
     }
 
+    useEffect(() => {
+        const lang = localStorage.getItem("i18nextLng");
+        let active: string[] = [];
+        if (isActiveBtns.event) {
+            active.push("event")
+        }
+        if (isActiveBtns.video) {
+            active.push("video")
+        }
+        if (isActiveBtns.smi) {
+            active.push("media_on_us ")
+        }
+        if (isActiveBtns.other) {
+            active.push("other")
+        }
+        if (isActiveBtns.external) {
+            active.push("external")
+        }
+        getNews({ sections: active.join(",") })
+    }, [isActiveBtns])
+
+    useEffect(() => {
+        getNews({ search: search })
+    }, [search])
 
     return (
         <>
@@ -57,8 +121,9 @@ export const News = () => {
                     </h1>
                 </div>
                 <div className={styles.searchBlock}>
-                    <SearchInput />
-                    <Button width="96" height="35" >Поиск</Button>
+                    <SearchInput
+                        value={search}
+                        onChange={(e: any) => { setSearch(e.target.value) }} />
                 </div>
                 <div className={styles.categoriesBlock}>
                     <p className={styles.categoryTitle}>Категории</p>
@@ -71,27 +136,35 @@ export const News = () => {
                     </div>
                 </div>
                 <div className={styles.newsBlock}>
-                    <div className={styles.first}>
-                        {data.map(({ image, text, date, category }, i) => {
-                            return (
-                                i < 3 ? <NewsCard key={i} image={image} text={text} date={date} category={category} /> : ""
-                            )
-                        })}
-                    </div>
-                    <div className={styles.second}>
-                        {data.map(({ image, text, date, category }, i) => {
-                            return (
-                                i > 2 && i < 5 ? <NewsCard key={i} image={image} text={text} date={date} category={category} /> : ""
-                            )
-                        })}
-                    </div>
-                    <div className={styles.third}>
-                        {data.map(({ image, text, date, category }, i) => {
-                            return (
-                                i > 4 ? <NewsCard key={i} image={image} text={text} date={date} category={category} /> : ""
-                            )
-                        })}
-                    </div>
+                    {data.length ? (
+                        <>
+                            <div className={styles.first}>
+                                {data.map(({ preview, headline, publication_date, section, id }: any, i: number) => {
+                                    return (
+                                        i < 3 ? (<Link to={`/news/${id}`}><NewsCard key={i} image={preview} text={headline} date={publication_date} category={section} /></Link>) : ""
+                                    )
+                                })}
+                            </div>
+                            <div className={styles.second}>
+                                {data.map(({ preview, headline, publication_date, section, id }: any, i: number) => {
+                                    return (
+                                        i > 2 && i < 5 ? (<Link to={`/news/${id}`}><NewsCard key={i} image={preview} text={headline} date={publication_date} category={section} /></Link>) : ""
+                                    )
+                                })}
+                            </div>
+                            <div className={styles.third}>
+                                {data.map(({ preview, headline, publication_date, section, id }: any, i: number) => {
+                                    return (
+                                        i > 4 ? (<Link to={`/news/${id}`}><NewsCard key={i} image={preview} text={headline} date={publication_date} category={section} /></Link>) : ""
+                                    )
+                                })}
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                        </>
+                    )}
+
                     <div className={styles.loadMore}>
                         <Button>Показать еще</Button>
                     </div>
