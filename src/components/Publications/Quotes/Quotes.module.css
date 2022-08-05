@@ -1,6 +1,5 @@
 .quotes {
-    background-color: white;
-    min-height: 500px;
+    background-color: inherit;
     padding-left: 140px;
     position: relative;
     padding-top: 10px;

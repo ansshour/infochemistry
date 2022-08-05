@@ -1,5 +1,4 @@
 .container {
-    height: 33px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,8 +7,7 @@
     border: 1px solid black;
     color: black;
     cursor: pointer;
-    /* width: 100%; */
-    padding: 0 20px;
+    padding: 7px 25px;
 }
 
 .container:hover {

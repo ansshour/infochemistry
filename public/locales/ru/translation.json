@@ -1,0 +1,22 @@
+{
+    "personalities": {
+        "breadcrumbs": {
+            "main": "Главная страница",
+            "about": "О центре",
+            "personalities": "Персоналии"
+        },
+        "title": "Персоналии",
+        "nav": {
+            "group_leaders": "Групп-лидеры",
+            "postdocs": "Постдоки и стипендиаты ИТМО",
+            "aspirants": "Аспиранты",
+            "masters": "Магистранты",
+            "backelors": "Бакалавры",
+            "schoolstudents": "Школьники",
+            "alums": "Алюмни",
+            "staff": "Персонал",
+            "practics": "Практиканты",
+            "admins": "Администрация"
+        }
+    }
+}

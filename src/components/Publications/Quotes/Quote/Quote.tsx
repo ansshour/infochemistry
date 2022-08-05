@@ -1,7 +1,6 @@
 import { useContext, useState } from "react"
 import styles from "./Quote.module.css"
 import icon from "./res/icon.svg"
-import { PublicationsContext } from "../../Publications"
 import { Modal } from "../../../UI/Modal/Modal"
 
 type Props = {
@@ -9,11 +8,13 @@ type Props = {
     name: string;
     place: string;
     code: string;
+    gost_citation: string;
+    mla_citation: string;
+    asa_citation: string;
 }
 
-export const Quote: React.FC<Props> = ({ authors, name, place, code }) => {
+export const Quote: React.FC<Props> = ({ authors, name, place, code, gost_citation, mla_citation, asa_citation }) => {
 
-    const { modalData } = useContext(PublicationsContext);
     const [isModalActive, setIsModalActive] = useState(false)
 
     return (
@@ -39,15 +40,15 @@ export const Quote: React.FC<Props> = ({ authors, name, place, code }) => {
                     </div>
                     <div className={styles.quote__modal}>
                         <p>ГОСТ</p>
-                        <p>{modalData.gost}</p>
+                        <p>{gost_citation}</p>
                     </div>
                     <div className={styles.quote__modal}>
                         <p>MLA</p>
-                        <p>{modalData.mla}</p>
+                        <p>{mla_citation}</p>
                     </div>
                     <div className={styles.quote__modal}>
                         <p>APA</p>
-                        <p>{modalData.apa}</p>
+                        <p>{asa_citation}</p>
                     </div>
                 </div>
             </Modal>

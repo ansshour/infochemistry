@@ -8,9 +8,13 @@ type Props = {
     resume?: string;
     image?: string;
     needResize?: boolean;
+    //
+    bio?: string;
+    cv_file?: string;
 }
 
-export const PersonalitiesCard: React.FC<Props> = ({ name, desc, phone, mail, resume, image, needResize }, i) => {
+export const PersonalitiesCard: React.FC<Props> = ({ name, desc, phone, mail, resume, image, needResize, bio, cv_file }, i) => {
+
     return (
         <div className={needResize ? [styles.container, styles.resize].join(" ") : styles.container} style={i % 2 !== 0 ? { borderBottom: "none", borderRight: "none" } : {}}>
             <div className={styles.imageContainer}>
@@ -22,20 +26,20 @@ export const PersonalitiesCard: React.FC<Props> = ({ name, desc, phone, mail, re
                 <p className={styles.name}>{name}
                 </p>
                 <p className={styles.desc}>
-                    {desc}
+                    {bio}
                 </p>
                 <div className={styles.contacts}>
                     <div className={styles.phone} style={!phone?.length ? { display: "none" } : {}}>
                         <img src={"./images/personalities/content/Call.svg"} alt="call" />
-                        <p>+7 (999) 210 39 77</p>
+                        <p>{phone}</p>
                     </div>
                     <div className={styles.mail} style={!mail?.length ? { display: "none" } : {}}>
                         <img src={"./images/personalities/content/Message.svg"} alt="Message" />
-                        <p>skorb@itmo.ru</p>
+                        <p>{mail}</p>
                     </div>
                     <div className={styles.resume} style={!resume?.length ? { display: "none" } : {}}>
                         <img src={"./images/personalities/content/Document.svg"} alt="Document" />
-                        <a href="#">Резюме</a>
+                        <a href={cv_file}>Резюме</a>
                     </div>
                 </div>
             </div>

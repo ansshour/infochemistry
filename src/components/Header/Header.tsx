@@ -1,14 +1,21 @@
 import { Button } from "../UI/Button/Button"
 import styles from "./Header.module.css"
 import { headerItems } from "./headerItems"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import logo from "./res/logo.png"
+import { useTranslation } from "react-i18next"
+import "../../utils/i18next"
 
 export const Header = () => {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const { t, i18n } = useTranslation();
+    const changeLanguage = (lang: string) => {
+        i18n.changeLanguage(lang);
+        window.location.reload();
+    }
 
     return (
         <>
@@ -38,9 +45,9 @@ export const Header = () => {
                     </nav>
                     <div className={styles.buttons}>
                         <div className={styles.langToggler}>
-                            <span>RU</span>
+                            <span onClick={() => { changeLanguage("ru") }} style={localStorage.getItem("i18nextLng") === "ru" ? { textDecoration: "underline" } : {}}>RU</span>
                             <span>/</span>
-                            <span>EN</span>
+                            <span onClick={() => { changeLanguage("en") }} style={localStorage.getItem("i18nextLng") === "en" ? { textDecoration: "underline" } : {}}>EN</span>
                         </div>
                         <Button>Войти</Button>
                     </div>
@@ -73,11 +80,11 @@ export const Header = () => {
                     </ul>
                     <div className={[styles.buttons, styles.buttonsMobile].join(" ")}>
                         <div className={styles.langToggler}>
-                            <span>RU</span>
+                            <span onClick={() => { changeLanguage("ru") }} style={localStorage.getItem("i18nextLng") === "ru" ? { fontWeight: "bold" } : {}}>RU</span>
                             <span>/</span>
-                            <span>EN</span>
+                            <span onClick={() => { changeLanguage("en") }} style={localStorage.getItem("i18nextLng") === "en" ? { fontWeight: "bold" } : {}}>EN</span>
                         </div>
-                        <Button style={{ padding: "0 20px" }}>Войти</Button>
+                        <Button style={{ padding: "0 20px", width: "80px" }}>Войти</Button>
                     </div>
                 </nav>
             </div>

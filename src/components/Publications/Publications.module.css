@@ -217,3 +217,7 @@
 .quotesWrapper {
     margin-bottom: 70px;
 }
+
+.navigateBtns {
+    all: unset;
+}

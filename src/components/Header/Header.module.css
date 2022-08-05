@@ -150,6 +150,10 @@
     margin-top: 35px;
 }
 
+.langToggler span {
+    cursor: pointer;
+}
+
 
 
 /* media */
