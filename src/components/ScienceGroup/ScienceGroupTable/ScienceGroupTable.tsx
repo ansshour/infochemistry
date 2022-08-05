@@ -3,6 +3,7 @@ import styles from "./ScienceGroupTable.module.css"
 type Area = {
     title: string;
     desc: string;
+    id: number;
 }
 
 type Props = {
@@ -13,13 +14,19 @@ type Props = {
     tasks: string[];
     area: Area[];
     icon: string;
+    id: number;
 }
 
 const classnames = [styles.first, styles.second, styles.third, styles.fourth]
 
 export const ScienceGroupTable: React.FC<Props> = ({ groupName, photo, name, email, tasks, area, icon }) => {
+
+
     return (
-        <div className={styles.container}>
+        <div className={styles.container}
+            style={area.length === 3 ? {
+                gridTemplateAreas: ` "main first second" "main third third" `
+            } : {}}>
             <div className={styles.main}>
                 <img className={styles.icon} src={icon} />
                 <p className={styles.groupName}>{groupName}</p>
@@ -34,12 +41,12 @@ export const ScienceGroupTable: React.FC<Props> = ({ groupName, photo, name, ema
                     </div>
                 </div>
                 <ul className={styles.tasksList}>
-                    {tasks.map((task) => <li>{task}</li>)}
+                    {tasks.map(({ name, id }: any) => <li key={`${name} ${id}`}>{name}</li>)}
                 </ul>
             </div>
-            {area.map(({ title, desc }: Area, i: number) => {
+            {area.map(({ title, desc, id }: Area, i: number) => {
                 return (
-                    <div className={[styles.area, classnames[i]].join(" ")}>
+                    <div className={[styles.area, classnames[i]].join(" ")} key={`${title} ${desc}`}>
                         <p className={styles.title}>{title}</p>
                         <p className={styles.desc}>{desc}</p>
                     </div>
